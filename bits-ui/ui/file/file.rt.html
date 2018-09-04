@@ -1,0 +1,14 @@
+<file>
+    <yield/>
+    <script>
+    var self = this;
+    self.on('mount', function(){
+        self.root.querySelector('button')
+            .addEventListener('click',
+            function(){
+                self.root.querySelector('input[type="file"]').click();
+            }
+        )
+    });
+    </script>
+</file>

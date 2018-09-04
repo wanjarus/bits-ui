@@ -1,0 +1,19 @@
+<switch>
+    <yield/>
+    <div ref="row">
+        <span ref="on">{opts.on}</span>
+        <span ref="off">{opts.off}</span>
+    </div>
+    <div ref="paddle"></div>
+    <script>
+    var self = this;
+
+    self.on('mount', function(opts){
+        opts = (typeof opts !== 'undefined') ?  opts : {};
+        opts.on = (typeof opts.on !== 'undefined') ?  opts.on : "ON";
+        opts.off = (typeof opts.off !== 'undefined') ?  opts.off : "OFF";
+        self.opts = opts;
+        self.update();
+    });
+    </script>
+</switch>

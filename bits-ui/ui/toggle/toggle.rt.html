@@ -1,0 +1,39 @@
+<toggle-btn>
+    <yield/>
+    <script>
+    var self = this;
+
+    self.on('mount', function(){
+        self.checkbox = self.root.querySelector('input');
+        self.checkbox.onclick = self.on_click;
+    });
+
+    on_click(event) {
+        if (self.checkbox.checked === true) {
+            self.root.classList.add('active');
+        } else {
+            self.root.classList.remove('active');
+        }
+    }
+    </script>
+</toggle-btn>
+
+<toggle-pin>
+    <yield/>
+    <script>
+    var self = this;
+
+    self.on('mount', function(){
+        self.checkbox = self.root.querySelector('input');
+        self.checkbox.onclick = self.on_click;
+    });
+
+    on_click(event) {
+        if (self.checkbox.checked === true) {
+            self.root.classList.add('active');
+        } else {
+            self.root.classList.remove('active');
+        }
+    }
+    </script>
+</toggle-pin>

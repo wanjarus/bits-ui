@@ -1,0 +1,24 @@
+dot-pulse($color=$progress-color)
+    min-width: 3.5em
+    div
+        width: 1em
+        height: 1em
+        background-color: $color
+        border-radius: 100%
+        display: inline-block
+        animation: dot-pulse-delay 1.4s infinite ease-in-out both
+
+    div[data-id="p1"]
+        animation-delay: -0.32s
+
+    div[data-id="p2"]
+        animation-delay: -0.16s
+
+dot-pulse
+    dot-pulse()
+
+@keyframes dot-pulse-delay
+    0%, 80%, 100%
+        transform: scale(0)
+    40%
+        transform: scale(1.0)

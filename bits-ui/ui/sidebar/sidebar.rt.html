@@ -1,0 +1,14 @@
+<sidebar>
+    <yield/>
+    <script>
+    var self = this;
+    show_sidebar () {
+        self.refs.wrapper.style.width = self.refs.wrapper.scrollWidth;
+        self.refs.overlay.classList.add('show');
+    };
+    hide_sidebar () {
+        self.refs.wrapper.style.width = 0;
+        self.refs.overlay.classList.remove('show');
+    };
+    </script>
+</sidebar>

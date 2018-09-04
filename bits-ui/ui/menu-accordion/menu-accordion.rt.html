@@ -1,0 +1,50 @@
+<menu-accordion>
+    <yield/>
+    <script>
+    var self = this;
+
+    self.on('mount', function(){
+        var caret = document.createElement('i');
+        self.a_items = self.root.querySelectorAll('a');
+        caret.classList.add('caret');
+        for (item of self.a_items) {
+            item.addEventListener('click', self.click);
+            if (item.parentElement.querySelector('ul')) {
+                item.appendChild(caret.cloneNode(true));
+            };
+        };
+    })
+
+    _hide (li) {
+        for (a of li.querySelectorAll('a')){
+            a.classList.remove('on');
+            ul = a.parentElement.querySelector('ul');
+            if (!ul) { continue };
+            ul.style.height = ul.scrollHeight;
+            // setTimeout to create height transition.
+            setTimeout(function(ul){
+                ul.style.height = 0;
+            }, 0, ul);
+        }
+    }
+
+    _show (li) {
+        var a = li.querySelector('a');
+        a.classList.add('on');
+        ul = a.closest('ul');
+        ul.style.height = 'auto';
+        ul = li.querySelector('ul');
+        if (!ul) { return };
+        ul.style.height = ul.scrollHeight;
+    }
+
+    click (event) {
+        var a = event.currentTarget;
+        if (a.classList.contains('on')) {
+            self._hide(a.parentElement);
+        } else {
+            self._show(a.parentElement);
+        }
+    }
+    </script>
+</menu-accordion>

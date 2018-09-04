@@ -1,0 +1,19 @@
+spinner($color=$progress-color)
+    display: inline-block
+    vertical-align: middle
+    box-sizing: border-box
+    border: 0.3em solid lighten(grey, 70%)
+    border-radius: 50%;
+    border-top: 0.3em solid $color
+    width: 2em;
+    height: 2em;
+    animation: spinner 1s linear infinite;
+
+spinner
+    spinner()
+
+@keyframes spinner
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)

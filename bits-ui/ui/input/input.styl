@@ -1,0 +1,57 @@
+slider-thumb($slider-thumb-color=$slider-thumb-color)
+    appearance: none
+    width: 1.2em
+    height: 1.2em
+    background-color: $slider-thumb-color
+    border: 1px solid
+    border-color: darken($slider-thumb-color, 50%)
+    border-radius: 50%
+    cursor: pointer
+
+
+
+slider(
+        $slider-thumb-color=$slider-thumb-color,
+        $slider-thumb-color-active=$slider-thumb-color-active,
+        $slider-bar-color=$slider-bar-color)
+    appearance: none
+    height: 0.2em
+    background-color: $slider-bar-color
+    outline: none
+    transition: opacity .2s
+    padding: 0
+
+    &::-webkit-slider-thumb
+        slider-thumb($slider-thumb-color)
+    &::-webkit-slider-thumb:hover
+        background-color: $slider-thumb-color-active
+    &::-webkit-slider-thumb:active
+        background-color: $slider-thumb-color-active
+
+    &::-moz-range-thumb
+        slider-thumb($slider-thumb-color)
+    &::-moz-range-thumb:hover
+        background-color: $slider-thumb-color-active
+    &::-moz-range-thumb:active
+        background-color: $slider-thumb-color-active
+
+input[type="range"]
+    slider(
+        $slider-thumb-color,
+        $slider-thumb-color-active,
+        $slider-bar-color)
+
+input
+    input-text()
+        ui-font()
+        border: 1px solid grey
+        border-radius: $border-radius
+        line-height: 2
+        box-sizing: border-box
+        padding: 0 0.4em
+        &:focus
+            outline-color: $color-active
+
+    input-text()
+    &[type="text"], &[type="password"], &[type="email"]
+        input-text()

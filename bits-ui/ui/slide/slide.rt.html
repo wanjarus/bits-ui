@@ -1,0 +1,66 @@
+<slide>
+    <div ref="slide">
+        <yield/>
+    </div>
+    <div ref="nav"></div>
+    <script>
+    var self = this;
+
+    self.on('mount', function(opts) {
+        self.refs.slide.addEventListener('touchstart', self.clear_interval, false);
+        self.refs.slide.addEventListener('click', self.clear_interval, false);
+        self.refs.slide.ondragstart = self.clear_interval;
+        self.slides = self.refs.slide.querySelectorAll('.slide')
+        if (opts) {
+            opts.selector = self.refs.slide;
+            opts.loop = true;
+            opts.onChange = self.on_change;
+            self.siema = new Siema(opts);
+        } else {
+            self.siema = new Siema({
+                selector: self.refs.slide,
+                loop: true,
+                duration: 300,
+                onChange: self.on_change
+            });
+        }
+        self.set_interval();
+        for (i=0; i<self.slides.length; i++) {
+            var dot = document.createElement('dot');
+            dot.dataset.i = i;
+            self.refs.nav.appendChild(dot);
+            dot.onclick = function(event){
+                self.nav_click(event);
+            };
+        };
+        self.dots = self.refs.nav.querySelectorAll('dot');
+        self.dots[0].classList.add('selected');
+    });
+
+    nav_click (event) {
+        var self = this;
+        var dot = event.currentTarget;
+        self.refs.nav.querySelector('.selected').classList.remove('selected');
+        dot.classList.add('selected');
+        self.siema.goTo(dot.dataset.i);
+        self.clear_interval();
+    };
+
+    on_change (event) {
+        var i = self.siema.currentSlide;
+        self.refs.nav.querySelector('.selected').classList.remove('selected');
+        self.dots[i].classList.add('selected');
+        self.trigger('change');
+    };
+
+    set_interval () {
+        self.interval = setInterval(function(){
+            self.siema.next();
+        }, 4000)
+    };
+
+    clear_interval () {
+        clearInterval(self.interval);
+    };
+    </script>
+</slide>

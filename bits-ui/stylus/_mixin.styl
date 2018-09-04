@@ -1,0 +1,234 @@
+darkshade($color=$color)
+    if hue($color) >= 30deg and (hue($color) <= 210deg)
+        if dark($color)
+            return true
+        else
+            return false
+    else
+        if dark(darken($color, 15%))
+            return true
+        else
+            return false
+
+bg-color($bg-color=$bg-color)
+    background-color: $bg-color
+    if darkshade($bg-color)
+        color: white
+    else
+        color: black
+
+ui-font()
+    font-family: "Roboto"
+    font-size: 1em
+
+lift-1()
+    box-shadow: 0 1px 3px 0 darken(white, 70%)
+
+lift-2()
+    box-shadow: 0 2px 5px 0 darken(white, 70%)
+
+lift-3()
+    box-shadow: 0 4px 9px 0 darken(white, 70%)
+
+lift-4()
+    box-shadow: 0 8px 17px 0 darken(white, 70%)
+
+lift-5()
+    box-shadow: 0 16px 33px 0 darken(white, 70%)
+
+card()
+    lift-2()
+    border-radius: $border-radius
+
+tag($color=$tag-color)
+    ui-font()
+    bg-color($color)
+    display: inline-block
+    text-align: center
+    border-radius: $border-radius
+    padding: 0.2em 0.4em
+    min-width: 1.2em
+
+badge($color=$badge-color)
+    ui-font()
+    bg-color($color)
+    display: inline-flex
+    justify-content: center
+    align-items: center
+    font-size: 0.7em
+    border-radius: 20em
+    padding: 0.2em 0.2em
+    min-width: 1.3em
+    min-height: 1.3em
+
+border-top-radius($radius=$border-radius)
+    border-top-left-radius: $radius
+    border-top-right-radius: $radius
+
+border-right-radius($radius=$border-radius)
+    border-top-right-radius: $radius
+    border-bottom-right-radius: $radius
+
+border-bottom-radius($radius=$border-radius)
+    border-bottom-right-radius: $radius
+    border-bottom-left-radius: $radius
+
+border-left-radius($radius=$border-radius)
+    border-top-left-radius: $radius
+    border-bottom-left-radius: $radius
+
+button($bg-color=$button-color)
+    ui-font()
+    outline: none
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    border: 0
+    border-radius: $border-radius
+    height: 2em
+    line-height: 2em
+    font-size: 1em
+    font-weight: bold
+    cursor: pointer
+    bg-color($bg-color)
+    transition: 0.2s
+    box-shadow: 0px 1px 2px 0px darken(white, 70%)
+    box-sizing: border-box
+    -webkit-tap-highlight-color: rgba(0,0,0,0)
+
+    &:hover
+        background-color: tint($bg-color, 20%)
+        box-shadow: 0px 2px 2px 0px darken(white, 70%)
+
+    &:active
+        background-color: darken($bg-color, 20%)
+        box-shadow: 0px 0px 2px 0px darken(white, 70%)
+
+    &[disabled]
+        bg-color(grayscale($bg-color))
+    &[disabled]:hover
+        bg-color(grayscale($bg-color))
+
+button-pin($bg-color=$button-color)
+    button($bg-color)
+    border-radius: 50%
+    width: 2em
+    height: 2em
+
+box-arrow(
+        $arrow=top,
+        $arrow-size=7px,
+        $arrow-color=lighten(grey, 80%),
+        $border-width=1px,
+        $border-color=black)
+    box-shadow: 0px 0px 5px darken(grey, 30%)
+    padding: 0.3rem
+    list-style: none
+    position: relative
+    border: $border-width solid $border-color
+    background-color: $arrow-color
+    &:after, &:before
+        border: solid transparent
+        content: ""
+        height: 0
+        width: 0
+        position: absolute
+        if $arrow == "top"
+            bottom: 100%
+            left: 50%
+        else if $arrow == "right"
+            left: 100%
+            top: 50%
+        else if $arrow == "bottom"
+            top: 100%
+            left: 50%
+        else if $arrow == "left"
+            right: 100%
+            top: 50%
+    &:after
+        border-width: $arrow-size
+        if $arrow == "top"
+            border-bottom-color: $arrow-color
+            margin-left: -($arrow-size)
+        else if $arrow == "right"
+            border-left-color: $arrow-color
+            margin-top: -($arrow-size)
+        else if $arrow == "bottom"
+            border-top-color: $arrow-color
+            margin-left: -($arrow-size)
+        else if $arrow == "left"
+            border-right-color: $arrow-color
+            margin-top: -($arrow-size)
+
+    &:before
+        border-width: "calc(%s + %s)" %($arrow-size $border-width)
+        if $arrow == "top"
+        	border-bottom-color: $border-color
+        	margin-left: "calc(-1*(%s + %s))" %($arrow-size $border-width)
+        else if $arrow == "right"
+        	border-left-color: $border-color
+        	margin-top: "calc(-1*(%s + %s))" %($arrow-size $border-width)
+        else if $arrow == "bottom"
+        	border-top-color: $border-color
+        	margin-left: "calc(-1*(%s + %s))" %($arrow-size $border-width)
+        else if $arrow == "left"
+        	border-right-color: $border-color
+        	margin-top: "calc(-1*(%s + %s))" %($arrow-size $border-width)
+
+toggle-btn($toggle-color=$button-color)
+    ui-font()
+    font-weight: bold
+    display: flex
+    align-items: center
+    position: relative
+
+    input[type="checkbox"]
+        /* Hide default HTML checkbox */
+        position: absolute
+        opacity: 0
+        cursor: pointer
+        z-index: 10
+        width: 100%
+        height: 100%
+
+    button
+        bg-color(darken(white, 10%))
+        border-top: 0.2em solid @color
+        padding-bottom: 0
+        box-sizing: content-box
+
+    input[type="checkbox"]:hover
+        ~ button
+            box-shadow: 0px 2px 2px 0px darken(white, 70%)
+
+    input[type="checkbox"]:checked
+        ~ button
+            border-color: $color-p
+
+toggle-pin($toggle-color=$button-color)
+    ui-font()
+    font-weight: bold
+    display: flex
+    align-items: center
+    position: relative
+
+    input[type="checkbox"]
+        /* Hide default HTML checkbox */
+        position: absolute
+        opacity: 0
+        cursor: pointer
+        z-index: 10
+        width: 100%
+        height: 100%
+
+    button-pin
+        bg-color(darken(white, 10%))
+
+    input[type="checkbox"]:hover
+        background-color: red
+        ~ button-pin
+            box-shadow: 0px 2px 2px 0px darken(white, 70%)
+
+    input[type="checkbox"]:checked
+        ~ button-pin
+            color: $color-p

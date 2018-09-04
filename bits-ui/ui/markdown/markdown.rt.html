@@ -1,0 +1,17 @@
+<markdown>
+    <script>
+    var self = this;
+
+    self.on('mount', function(){
+        fetch(self.root.getAttribute('src')).then(function(response){
+            return response.text();
+        }).then(function(markdown){
+            self.root.innerHTML = marked(markdown);
+            if (Prism) {
+                Prism.highlightAllUnder(self.root);
+            };
+        });
+    })
+
+    </script>
+</markdown>
