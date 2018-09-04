@@ -38,7 +38,7 @@ gulp.task('dist', function(){
     .pipe(concat('bits.rt.js'))
     .pipe(gulp.dest('dist/'));
 
-    return gulp.src('bits-ui/stylus/bits.styl')
+    return gulp.src('bits-ui/stylus/bits-ui.styl')
     .pipe(sourcemaps.init())
     .pipe(stylus({
         use: nib(), import: ['nib']
