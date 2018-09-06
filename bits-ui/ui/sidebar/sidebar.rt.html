@@ -2,12 +2,33 @@
     <yield/>
     <script>
     var self = this;
+
+    self.on('mount', function(){
+        self.opts.show = (typeof self.opts.show !== 'undefined') ? self.opts.show : '1000px';
+        media_query = '(min-width: ' + self.opts.show + ')';
+        self.media_query = window.matchMedia(media_query);
+        if (self.media_query.matches) {
+            setTimeout(function(){
+                self.show_sidebar();
+            }, 0)
+        };
+        self.media_query.addListener(self.media_change);
+    })
+
+    media_change () {
+        if (self.media_query.matches) {
+            self.show_sidebar();
+        } else {
+            self.hide_sidebar();
+        }
+    }
+
     show_sidebar () {
-        self.refs.wrapper.style.width = self.refs.wrapper.scrollWidth;
+        self.refs.wrapper.classList.add('show');
         self.refs.overlay.classList.add('show');
     };
     hide_sidebar () {
-        self.refs.wrapper.style.width = 0;
+        self.refs.wrapper.classList.remove('show');
         self.refs.overlay.classList.remove('show');
     };
     </script>

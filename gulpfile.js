@@ -5,7 +5,7 @@ var gulp = require('gulp'),
     nib = require('nib'),
     sourcemaps = require('gulp-sourcemaps');
 
-gulp.task('dist', function(){
+function dist(){
     gulp.src([
         'node_modules/riot/riot.min.js',
         'node_modules/riot/riot+compiler.min.js'
@@ -45,14 +45,15 @@ gulp.task('dist', function(){
     }))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('dist/'))
-});
+};
 
-gulp.task('default', gulp.series('dist'));
+gulp.task('default', gulp.series(dist));
 
-gulp.task('dev', function(){
-    gulp.series('dist');
-    gulp.watch([
-        'bits-ui/ui/**/*',
-        'bits-ui/stylus/**/*.styl'
-    ], gulp.series('dist'));
-})
+gulp.task('dev', gulp.series(dist,
+    function(){
+        gulp.watch([
+            'bits-ui/ui/**/*',
+            'bits-ui/stylus/**/*.styl'
+        ], gulp.series(dist));
+    })
+);

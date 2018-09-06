@@ -6,13 +6,16 @@ sidebar
     div[ref="wrapper"]
         position: fixed
         z-index: 101
-        display: flex
-        flex-wrap: wrap
-        align-content: flex-start
         height: 100%
         background-color: white
         overflow-x: hidden
-        transition: 0.3s
+        overflow-y: auto
+        transition: transform 0.3s
+        transform: translate3d()
+        transform: translateX(-100%);
+        will-change: transform
+        &.show
+            transform: translateX(0)
 
     div[ref="overlay"]
         position: fixed
