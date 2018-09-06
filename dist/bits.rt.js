@@ -88,12 +88,18 @@ riot.tag2('radio', '<yield></yield> <span></span>', '', '', function(opts) {
 
 riot.tag2('sidebar', '<yield></yield>', '', '', function(opts) {
     var self = this;
+
+    self.on('mount', function(){
+        var wrapper = self.refs.wrapper;
+        self.scroll_width = wrapper.offsetWidth - wrapper.scrollWidth;
+    })
+
     this.show_sidebar = function () {
-        self.refs.wrapper.style.width = self.refs.wrapper.scrollWidth;
+        self.refs.wrapper.style.left = 0;
         self.refs.overlay.classList.add('show');
     }.bind(this);
     this.hide_sidebar = function () {
-        self.refs.wrapper.style.width = 0;
+        self.refs.wrapper.style.left = -(self.refs.wrapper.scrollWidth + self.scroll_width);
         self.refs.overlay.classList.remove('show');
     }.bind(this);
 });
