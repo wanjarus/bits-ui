@@ -90,16 +90,31 @@ riot.tag2('sidebar', '<yield></yield>', '', '', function(opts) {
     var self = this;
 
     self.on('mount', function(){
-        var wrapper = self.refs.wrapper;
-        self.scroll_width = wrapper.offsetWidth - wrapper.scrollWidth;
+        self.opts.show = (typeof self.opts.show !== 'undefined') ? self.opts.show : '1000px';
+        media_query = '(min-width: ' + self.opts.show + ')';
+        self.media_query = window.matchMedia(media_query);
+        if (self.media_query.matches) {
+            setTimeout(function(){
+                self.show_sidebar();
+            }, 0)
+        };
+        self.media_query.addListener(self.media_change);
     })
 
+    this.media_change = function () {
+        if (self.media_query.matches) {
+            self.show_sidebar();
+        } else {
+            self.hide_sidebar();
+        }
+    }.bind(this)
+
     this.show_sidebar = function () {
-        self.refs.wrapper.style.left = 0;
+        self.refs.wrapper.classList.add('show');
         self.refs.overlay.classList.add('show');
     }.bind(this);
     this.hide_sidebar = function () {
-        self.refs.wrapper.style.left = -(self.refs.wrapper.scrollWidth + self.scroll_width);
+        self.refs.wrapper.classList.remove('show');
         self.refs.overlay.classList.remove('show');
     }.bind(this);
 });

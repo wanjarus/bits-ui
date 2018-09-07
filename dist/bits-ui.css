@@ -1251,11 +1251,53 @@ sidebar div[ref="wrapper"] {
   background-color: #fff;
   overflow-x: hidden;
   overflow-y: auto;
-  -webkit-transition: left 0.3s;
-  -moz-transition: left 0.3s;
-  -o-transition: left 0.3s;
-  -ms-transition: left 0.3s;
-  transition: left 0.3s;
+  -webkit-transition: -webkit-transform 0.3s;
+  -moz-transition: -moz-transform 0.3s;
+  -o-transition: -o-transform 0.3s;
+  -ms-transition: -ms-transform 0.3s;
+  transition: transform 0.3s;
+  -webkit-transform: translate3d();
+  -moz-transform: translate3d();
+  -o-transform: translate3d();
+  -ms-transform: translate3d();
+  transform: translate3d();
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
+  will-change: transform;
+}
+sidebar div[ref="wrapper"].show {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -o-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
+sidebar div[ref="wrapper"] ul.sidebar-ul {
+  margin: 0;
+  list-style: none;
+  padding-bottom: 3rem;
+}
+sidebar div[ref="wrapper"] ul.sidebar-ul a {
+  line-height: 2rem;
+  display: block;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+sidebar div[ref="wrapper"] ul.sidebar-ul a:hover {
+  background-color: #ff225b;
+}
+sidebar div[ref="wrapper"] ul.sidebar-ul li {
+  padding-left: 0;
+  min-height: 2rem;
+  line-height: 2rem;
+}
+sidebar div[ref="wrapper"] ul.sidebar-ul li ul {
+  margin: 0;
+  list-style: none;
+  padding-left: 0.8rem;
 }
 sidebar div[ref="overlay"] {
   position: fixed;
