@@ -75,6 +75,32 @@
 .bg-blue-grey, .bg-blue-gray
     bg-color(blue-grey)
 
+.bg-white
+    bg-color(white)
+    &.d1
+        bg-color(darken(white, 10%))
+    &.d2
+        bg-color(darken(white, 20%))
+    &.d3
+        bg-color(darken(white, 30%))
+    &.d4
+        bg-color(darken(white, 40%))
+    &.d5
+        bg-color(darken(white, 50%))
+
+.bg-black
+    bg-color(black)
+    &.l1
+        bg-color(lighten(black, 10%))
+    &.l2
+        bg-color(lighten(black, 20%))
+    &.l3
+        bg-color(lighten(black, 30%))
+    &.l4
+        bg-color(lighten(black, 40%))
+    &.l5
+        bg-color(lighten(black, 50%))
+
 .color-primary, .color-p
     color: $color-primary
     &.l1
@@ -94,7 +120,7 @@
     &.d4
         color: darken(@color, 80%)
 .bg-primary, .bg-p
-    bg-color($color-primary)
+    bg-color($color-p)
     &.l1
         bg-color(lighten($color-p, 20%))
     &.l2

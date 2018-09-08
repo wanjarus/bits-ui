@@ -17,6 +17,22 @@ bg-color($bg-color=$bg-color)
     else
         color: black
 
+border-top-radius($radius=$border-radius)
+    border-top-left-radius: $radius
+    border-top-right-radius: $radius
+
+border-right-radius($radius=$border-radius)
+    border-top-right-radius: $radius
+    border-bottom-right-radius: $radius
+
+border-bottom-radius($radius=$border-radius)
+    border-bottom-right-radius: $radius
+    border-bottom-left-radius: $radius
+
+border-left-radius($radius=$border-radius)
+    border-top-left-radius: $radius
+    border-bottom-left-radius: $radius
+
 ui-font()
     font-family: "Roboto"
     font-size: 1em
@@ -35,10 +51,6 @@ lift-4()
 
 lift-5()
     box-shadow: 0 16px 33px 0 darken(white, 70%)
-
-card()
-    lift-2()
-    border-radius: $border-radius
 
 tag($color=$tag-color)
     ui-font()
@@ -60,22 +72,6 @@ badge($color=$badge-color)
     padding: 0.2em 0.2em
     min-width: 1.3em
     min-height: 1.3em
-
-border-top-radius($radius=$border-radius)
-    border-top-left-radius: $radius
-    border-top-right-radius: $radius
-
-border-right-radius($radius=$border-radius)
-    border-top-right-radius: $radius
-    border-bottom-right-radius: $radius
-
-border-bottom-radius($radius=$border-radius)
-    border-bottom-right-radius: $radius
-    border-bottom-left-radius: $radius
-
-border-left-radius($radius=$border-radius)
-    border-top-left-radius: $radius
-    border-bottom-left-radius: $radius
 
 button($bg-color=$button-color)
     ui-font()

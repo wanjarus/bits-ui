@@ -135,6 +135,54 @@
   background-color: #607d8b;
   color: #fff;
 }
+.bg-white {
+  background-color: #fff;
+  color: #000;
+}
+.bg-white.d1 {
+  background-color: #e6e6e6;
+  color: #000;
+}
+.bg-white.d2 {
+  background-color: #ccc;
+  color: #000;
+}
+.bg-white.d3 {
+  background-color: #b3b3b3;
+  color: #000;
+}
+.bg-white.d4 {
+  background-color: #999;
+  color: #000;
+}
+.bg-white.d5 {
+  background-color: #808080;
+  color: #fff;
+}
+.bg-black {
+  background-color: #000;
+  color: #fff;
+}
+.bg-black.l1 {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+.bg-black.l2 {
+  background-color: #333;
+  color: #fff;
+}
+.bg-black.l3 {
+  background-color: #4d4d4d;
+  color: #fff;
+}
+.bg-black.l4 {
+  background-color: #666;
+  color: #fff;
+}
+.bg-black.l5 {
+  background-color: #808080;
+  color: #fff;
+}
 .color-primary,
 .color-p {
   color: #ff5722;
@@ -606,12 +654,161 @@ button-pin[disabled]:hover,
   background-color: #919191;
   color: #fff;
 }
+button-group,
+.button-group,
+[data-is="button-group"] {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+}
+button-group button,
+.button-group button,
+[data-is="button-group"] button,
+button-group .button,
+.button-group .button,
+[data-is="button-group"] .button,
+button-group [data-is="button"],
+.button-group [data-is="button"],
+[data-is="button-group"] [data-is="button"] {
+  width: 100%;
+  border-radius: 0;
+}
+button-group button:first-of-type,
+.button-group button:first-of-type,
+[data-is="button-group"] button:first-of-type,
+button-group .button:first-of-type,
+.button-group .button:first-of-type,
+[data-is="button-group"] .button:first-of-type,
+button-group [data-is="button"]:first-of-type,
+.button-group [data-is="button"]:first-of-type,
+[data-is="button-group"] [data-is="button"]:first-of-type {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 0.2em;
+  border-bottom-left-radius: 0.2em;
+}
+button-group button:last-of-type,
+.button-group button:last-of-type,
+[data-is="button-group"] button:last-of-type,
+button-group .button:last-of-type,
+.button-group .button:last-of-type,
+[data-is="button-group"] .button:last-of-type,
+button-group [data-is="button"]:last-of-type,
+.button-group [data-is="button"]:last-of-type,
+[data-is="button-group"] [data-is="button"]:last-of-type {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 0.2em;
+  border-bottom-right-radius: 0.2em;
+}
 card,
 [data-is="card"],
 .card {
   -webkit-box-shadow: 0 2px 5px 0 #4d4d4d;
   box-shadow: 0 2px 5px 0 #4d4d4d;
   border-radius: 0.2em;
+}
+card > h1,
+[data-is="card"] > h1,
+.card > h1,
+card h2,
+[data-is="card"] h2,
+.card h2,
+card h3,
+[data-is="card"] h3,
+.card h3 {
+  padding: 0.5rem 1rem;
+  margin: 0;
+}
+card > p,
+[data-is="card"] > p,
+.card > p {
+  padding: 1rem;
+  margin: 0;
+}
+card > div:first-of-type,
+[data-is="card"] > div:first-of-type,
+.card > div:first-of-type,
+card img:first-of-type,
+[data-is="card"] img:first-of-type,
+.card img:first-of-type,
+card p:first-of-type,
+[data-is="card"] p:first-of-type,
+.card p:first-of-type {
+  border-top-left-radius: 0.2em;
+  border-top-right-radius: 0.2em;
+}
+card > button-group:last-of-type,
+[data-is="card"] > button-group:last-of-type,
+.card > button-group:last-of-type,
+card .button-group:last-of-type,
+[data-is="card"] .button-group:last-of-type,
+.card .button-group:last-of-type,
+card [data-is="button-group"]:last-of-type,
+[data-is="card"] [data-is="button-group"]:last-of-type,
+.card [data-is="button-group"]:last-of-type {
+  border-top: 1px solid #9e9e9e;
+}
+card > button-group > button:first-of-type,
+[data-is="card"] > button-group > button:first-of-type,
+.card > button-group > button:first-of-type,
+card .button-group > button:first-of-type,
+[data-is="card"] .button-group > button:first-of-type,
+.card .button-group > button:first-of-type,
+card [data-is="button-group"] > button:first-of-type,
+[data-is="card"] [data-is="button-group"] > button:first-of-type,
+.card [data-is="button-group"] > button:first-of-type,
+card > button-group .button:first-of-type,
+[data-is="card"] > button-group .button:first-of-type,
+.card > button-group .button:first-of-type,
+card .button-group .button:first-of-type,
+[data-is="card"] .button-group .button:first-of-type,
+.card .button-group .button:first-of-type,
+card [data-is="button-group"] .button:first-of-type,
+[data-is="card"] [data-is="button-group"] .button:first-of-type,
+.card [data-is="button-group"] .button:first-of-type,
+card > button-group [data-is="button"]:first-of-type,
+[data-is="card"] > button-group [data-is="button"]:first-of-type,
+.card > button-group [data-is="button"]:first-of-type,
+card .button-group [data-is="button"]:first-of-type,
+[data-is="card"] .button-group [data-is="button"]:first-of-type,
+.card .button-group [data-is="button"]:first-of-type,
+card [data-is="button-group"] [data-is="button"]:first-of-type,
+[data-is="card"] [data-is="button-group"] [data-is="button"]:first-of-type,
+.card [data-is="button-group"] [data-is="button"]:first-of-type {
+  border-top-left-radius: 0;
+}
+card > button-group > button:last-of-type,
+[data-is="card"] > button-group > button:last-of-type,
+.card > button-group > button:last-of-type,
+card .button-group > button:last-of-type,
+[data-is="card"] .button-group > button:last-of-type,
+.card .button-group > button:last-of-type,
+card [data-is="button-group"] > button:last-of-type,
+[data-is="card"] [data-is="button-group"] > button:last-of-type,
+.card [data-is="button-group"] > button:last-of-type,
+card > button-group .button:last-of-type,
+[data-is="card"] > button-group .button:last-of-type,
+.card > button-group .button:last-of-type,
+card .button-group .button:last-of-type,
+[data-is="card"] .button-group .button:last-of-type,
+.card .button-group .button:last-of-type,
+card [data-is="button-group"] .button:last-of-type,
+[data-is="card"] [data-is="button-group"] .button:last-of-type,
+.card [data-is="button-group"] .button:last-of-type,
+card > button-group [data-is="button"]:last-of-type,
+[data-is="card"] > button-group [data-is="button"]:last-of-type,
+.card > button-group [data-is="button"]:last-of-type,
+card .button-group [data-is="button"]:last-of-type,
+[data-is="card"] .button-group [data-is="button"]:last-of-type,
+.card .button-group [data-is="button"]:last-of-type,
+card [data-is="button-group"] [data-is="button"]:last-of-type,
+[data-is="card"] [data-is="button-group"] [data-is="button"]:last-of-type,
+.card [data-is="button-group"] [data-is="button"]:last-of-type {
+  border-top-right-radius: 0;
 }
 checkbox,
 [data-is="checkbox"] {
