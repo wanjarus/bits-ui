@@ -41,17 +41,19 @@ input[type="range"]
         $slider-thumb-color-active,
         $slider-bar-color)
 
+
+input-text()
+    ui-font()
+    border: 1px solid $color-p
+    border-radius: $border-radius
+    line-height: 2
+    padding: 0 0.4em
+    border: 1px solid $color-p
+    &:focus
+        lift-1()
+
 input
     input-text()
-        ui-font()
-        border: 1px solid grey
-        border-radius: $border-radius
-        line-height: 2
-        box-sizing: border-box
-        padding: 0 0.4em
-        &:focus
-            outline-color: $color-active
 
-    input-text()
     &[type="text"], &[type="password"], &[type="email"]
         input-text()

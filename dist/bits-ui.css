@@ -38,7 +38,7 @@
 }
 .bg-blue {
   background-color: #2196f3;
-  color: #000;
+  color: #fff;
 }
 .light-blue {
   color: #03a9f4;
@@ -348,7 +348,7 @@ badge,
   display: -webkit-inline-box;
   display: -moz-inline-box;
   display: -webkit-inline-flex;
-  font-family: "Roboto";
+  font-family: "Cantarell";
   font-size: 1em;
   background-color: #ff5722;
   color: #fff;
@@ -515,7 +515,7 @@ button,
   display: -webkit-inline-box;
   display: -moz-inline-box;
   display: -webkit-inline-flex;
-  font-family: "Roboto";
+  font-family: "Cantarell";
   font-size: 1em;
   outline: none;
   display: -ms-inline-flexbox;
@@ -536,7 +536,6 @@ button,
   border: 0;
   border-radius: 0.2em;
   height: 2em;
-  line-height: 2em;
   font-size: 1em;
   font-weight: bold;
   cursor: pointer;
@@ -586,7 +585,7 @@ button-pin,
   display: -webkit-inline-box;
   display: -moz-inline-box;
   display: -webkit-inline-flex;
-  font-family: "Roboto";
+  font-family: "Cantarell";
   font-size: 1em;
   outline: none;
   display: -ms-inline-flexbox;
@@ -607,7 +606,6 @@ button-pin,
   border: 0;
   border-radius: 0.2em;
   height: 2em;
-  line-height: 2em;
   font-size: 1em;
   font-weight: bold;
   cursor: pointer;
@@ -704,6 +702,22 @@ button-group [data-is="button"]:last-of-type,
   border-top-right-radius: 0.2em;
   border-bottom-right-radius: 0.2em;
 }
+button-group radio-btn:first-of-type button,
+.button-group radio-btn:first-of-type button,
+[data-is="button-group"] radio-btn:first-of-type button {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 0.2em;
+  border-bottom-left-radius: 0.2em;
+}
+button-group radio-btn:last-of-type button,
+.button-group radio-btn:last-of-type button,
+[data-is="button-group"] radio-btn:last-of-type button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 0.2em;
+  border-bottom-right-radius: 0.2em;
+}
 card,
 [data-is="card"],
 .card {
@@ -714,12 +728,12 @@ card,
 card > h1,
 [data-is="card"] > h1,
 .card > h1,
-card h2,
-[data-is="card"] h2,
-.card h2,
-card h3,
-[data-is="card"] h3,
-.card h3 {
+card > h2,
+[data-is="card"] > h2,
+.card > h2,
+card > h3,
+[data-is="card"] > h3,
+.card > h3 {
   padding: 0.5rem 1rem;
   margin: 0;
 }
@@ -729,90 +743,85 @@ card > p,
   padding: 1rem;
   margin: 0;
 }
-card > div:first-of-type,
-[data-is="card"] > div:first-of-type,
-.card > div:first-of-type,
-card img:first-of-type,
-[data-is="card"] img:first-of-type,
-.card img:first-of-type,
-card p:first-of-type,
-[data-is="card"] p:first-of-type,
-.card p:first-of-type {
-  border-top-left-radius: 0.2em;
-  border-top-right-radius: 0.2em;
+card > button:last-of-type,
+[data-is="card"] > button:last-of-type,
+.card > button:last-of-type {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  width: 100%;
 }
 card > button-group:last-of-type,
 [data-is="card"] > button-group:last-of-type,
 .card > button-group:last-of-type,
-card .button-group:last-of-type,
-[data-is="card"] .button-group:last-of-type,
-.card .button-group:last-of-type,
-card [data-is="button-group"]:last-of-type,
-[data-is="card"] [data-is="button-group"]:last-of-type,
-.card [data-is="button-group"]:last-of-type {
+card > .button-group:last-of-type,
+[data-is="card"] > .button-group:last-of-type,
+.card > .button-group:last-of-type,
+card > [data-is="button-group"]:last-of-type,
+[data-is="card"] > [data-is="button-group"]:last-of-type,
+.card > [data-is="button-group"]:last-of-type {
   border-top: 1px solid #9e9e9e;
 }
 card > button-group > button:first-of-type,
 [data-is="card"] > button-group > button:first-of-type,
 .card > button-group > button:first-of-type,
-card .button-group > button:first-of-type,
-[data-is="card"] .button-group > button:first-of-type,
-.card .button-group > button:first-of-type,
-card [data-is="button-group"] > button:first-of-type,
-[data-is="card"] [data-is="button-group"] > button:first-of-type,
-.card [data-is="button-group"] > button:first-of-type,
-card > button-group .button:first-of-type,
-[data-is="card"] > button-group .button:first-of-type,
-.card > button-group .button:first-of-type,
-card .button-group .button:first-of-type,
-[data-is="card"] .button-group .button:first-of-type,
-.card .button-group .button:first-of-type,
-card [data-is="button-group"] .button:first-of-type,
-[data-is="card"] [data-is="button-group"] .button:first-of-type,
-.card [data-is="button-group"] .button:first-of-type,
-card > button-group [data-is="button"]:first-of-type,
-[data-is="card"] > button-group [data-is="button"]:first-of-type,
-.card > button-group [data-is="button"]:first-of-type,
-card .button-group [data-is="button"]:first-of-type,
-[data-is="card"] .button-group [data-is="button"]:first-of-type,
-.card .button-group [data-is="button"]:first-of-type,
-card [data-is="button-group"] [data-is="button"]:first-of-type,
-[data-is="card"] [data-is="button-group"] [data-is="button"]:first-of-type,
-.card [data-is="button-group"] [data-is="button"]:first-of-type {
+card > .button-group > button:first-of-type,
+[data-is="card"] > .button-group > button:first-of-type,
+.card > .button-group > button:first-of-type,
+card > [data-is="button-group"] > button:first-of-type,
+[data-is="card"] > [data-is="button-group"] > button:first-of-type,
+.card > [data-is="button-group"] > button:first-of-type,
+card > button-group > .button:first-of-type,
+[data-is="card"] > button-group > .button:first-of-type,
+.card > button-group > .button:first-of-type,
+card > .button-group > .button:first-of-type,
+[data-is="card"] > .button-group > .button:first-of-type,
+.card > .button-group > .button:first-of-type,
+card > [data-is="button-group"] > .button:first-of-type,
+[data-is="card"] > [data-is="button-group"] > .button:first-of-type,
+.card > [data-is="button-group"] > .button:first-of-type,
+card > button-group > [data-is="button"]:first-of-type,
+[data-is="card"] > button-group > [data-is="button"]:first-of-type,
+.card > button-group > [data-is="button"]:first-of-type,
+card > .button-group > [data-is="button"]:first-of-type,
+[data-is="card"] > .button-group > [data-is="button"]:first-of-type,
+.card > .button-group > [data-is="button"]:first-of-type,
+card > [data-is="button-group"] > [data-is="button"]:first-of-type,
+[data-is="card"] > [data-is="button-group"] > [data-is="button"]:first-of-type,
+.card > [data-is="button-group"] > [data-is="button"]:first-of-type {
   border-top-left-radius: 0;
 }
 card > button-group > button:last-of-type,
 [data-is="card"] > button-group > button:last-of-type,
 .card > button-group > button:last-of-type,
-card .button-group > button:last-of-type,
-[data-is="card"] .button-group > button:last-of-type,
-.card .button-group > button:last-of-type,
-card [data-is="button-group"] > button:last-of-type,
-[data-is="card"] [data-is="button-group"] > button:last-of-type,
-.card [data-is="button-group"] > button:last-of-type,
-card > button-group .button:last-of-type,
-[data-is="card"] > button-group .button:last-of-type,
-.card > button-group .button:last-of-type,
-card .button-group .button:last-of-type,
-[data-is="card"] .button-group .button:last-of-type,
-.card .button-group .button:last-of-type,
-card [data-is="button-group"] .button:last-of-type,
-[data-is="card"] [data-is="button-group"] .button:last-of-type,
-.card [data-is="button-group"] .button:last-of-type,
-card > button-group [data-is="button"]:last-of-type,
-[data-is="card"] > button-group [data-is="button"]:last-of-type,
-.card > button-group [data-is="button"]:last-of-type,
-card .button-group [data-is="button"]:last-of-type,
-[data-is="card"] .button-group [data-is="button"]:last-of-type,
-.card .button-group [data-is="button"]:last-of-type,
-card [data-is="button-group"] [data-is="button"]:last-of-type,
-[data-is="card"] [data-is="button-group"] [data-is="button"]:last-of-type,
-.card [data-is="button-group"] [data-is="button"]:last-of-type {
+card > .button-group > button:last-of-type,
+[data-is="card"] > .button-group > button:last-of-type,
+.card > .button-group > button:last-of-type,
+card > [data-is="button-group"] > button:last-of-type,
+[data-is="card"] > [data-is="button-group"] > button:last-of-type,
+.card > [data-is="button-group"] > button:last-of-type,
+card > button-group > .button:last-of-type,
+[data-is="card"] > button-group > .button:last-of-type,
+.card > button-group > .button:last-of-type,
+card > .button-group > .button:last-of-type,
+[data-is="card"] > .button-group > .button:last-of-type,
+.card > .button-group > .button:last-of-type,
+card > [data-is="button-group"] > .button:last-of-type,
+[data-is="card"] > [data-is="button-group"] > .button:last-of-type,
+.card > [data-is="button-group"] > .button:last-of-type,
+card > button-group > [data-is="button"]:last-of-type,
+[data-is="card"] > button-group > [data-is="button"]:last-of-type,
+.card > button-group > [data-is="button"]:last-of-type,
+card > .button-group > [data-is="button"]:last-of-type,
+[data-is="card"] > .button-group > [data-is="button"]:last-of-type,
+.card > .button-group > [data-is="button"]:last-of-type,
+card > [data-is="button-group"] > [data-is="button"]:last-of-type,
+[data-is="card"] > [data-is="button-group"] > [data-is="button"]:last-of-type,
+.card > [data-is="button-group"] > [data-is="button"]:last-of-type {
   border-top-right-radius: 0;
 }
 checkbox,
 [data-is="checkbox"] {
-  font-family: "Roboto";
+  font-family: "Cantarell";
   font-size: 1em;
   position: relative;
   width: 1.1em;
@@ -885,7 +894,7 @@ checkbox span:after,
 }
 file,
 [data-is="file"] {
-  font-family: "Roboto";
+  font-family: "Cantarell";
   font-size: 1em;
   position: relative;
   display: inline-block;
@@ -956,36 +965,34 @@ input[type="range"]::-moz-range-thumb:active {
   background-color: #ff5722;
 }
 input {
-  font-family: "Roboto";
+  font-family: "Cantarell";
   font-size: 1em;
-  border: 1px solid #9e9e9e;
+  border: 1px solid #ff5722;
   border-radius: 0.2em;
   line-height: 2;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
   padding: 0 0.4em;
+  border: 1px solid #ff5722;
 }
 input:focus {
-  outline-color: $color-active;
+  -webkit-box-shadow: 0 1px 3px 0 #4d4d4d;
+  box-shadow: 0 1px 3px 0 #4d4d4d;
 }
 input[type="text"],
 input[type="password"],
 input[type="email"] {
-  font-family: "Roboto";
+  font-family: "Cantarell";
   font-size: 1em;
-  border: 1px solid #9e9e9e;
+  border: 1px solid #ff5722;
   border-radius: 0.2em;
   line-height: 2;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
   padding: 0 0.4em;
+  border: 1px solid #ff5722;
 }
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus {
-  outline-color: $color-active;
+  -webkit-box-shadow: 0 1px 3px 0 #4d4d4d;
+  box-shadow: 0 1px 3px 0 #4d4d4d;
 }
 ul[data-is="menu-accordion"] {
   padding: 0;
@@ -1337,7 +1344,6 @@ radio-btn,
 [data-is="radio-btn"] {
   display: inline-block;
   position: relative;
-  height: 2em;
   font-size: 1em;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1364,7 +1370,7 @@ radio-btn button,
   display: -webkit-inline-box;
   display: -moz-inline-box;
   display: -webkit-inline-flex;
-  font-family: "Roboto";
+  font-family: "Cantarell";
   font-size: 1em;
   outline: none;
   display: -ms-inline-flexbox;
@@ -1385,7 +1391,6 @@ radio-btn button,
   border: 0;
   border-radius: 0.2em;
   height: 2em;
-  line-height: 2em;
   font-size: 1em;
   font-weight: bold;
   cursor: pointer;
@@ -1436,7 +1441,7 @@ radio-btn input[type="radio"]:checked ~ button,
   color: #fff;
 }
 sidebar {
-  font-family: "Roboto";
+  font-family: "Cantarell";
   font-size: 1em;
   position: absolute;
   top: 0;
@@ -1529,7 +1534,7 @@ slide [ref="nav"] dot.selected {
 }
 switch,
 [data-is="switch"] {
-  font-family: "Roboto";
+  font-family: "Cantarell";
   font-size: 1em;
   display: -webkit-box;
   display: -moz-box;
@@ -1657,7 +1662,7 @@ toggle-btn,
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
-  font-family: "Roboto";
+  font-family: "Cantarell";
   font-size: 1em;
   font-weight: bold;
   display: -ms-flexbox;
@@ -1707,7 +1712,7 @@ toggle-pin,
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
-  font-family: "Roboto";
+  font-family: "Cantarell";
   font-size: 1em;
   font-weight: bold;
   display: -ms-flexbox;
@@ -1752,8 +1757,9 @@ toggle-pin input[type="checkbox"]:checked ~ button-pin,
   color: #ff5722;
 }
 tag,
+.tag,
 [data-is=tag] {
-  font-family: "Roboto";
+  font-family: "Cantarell";
   font-size: 1em;
   background-color: #ff5722;
   color: #fff;
