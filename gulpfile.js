@@ -18,6 +18,12 @@ function dist(){
     gulp.src('node_modules/urijs/src/**/*')
     .pipe(gulp.dest('dist/urijs/'));
 
+    gulp.src('node_modules/svg4everybody/dist/svg4everybody.min.js')
+    .pipe(gulp.dest('dist/'));
+
+    gulp.src('bits-ui/icon/**/*')
+    .pipe(gulp.dest('dist/icon/'));
+
     gulp.src('node_modules/prismjs/**/*')
     .pipe(gulp.dest('dist/prismjs/'));
 
@@ -30,10 +36,7 @@ function dist(){
     gulp.src('bits-ui/font/**/*')
     .pipe(gulp.dest('dist/font/'))
 
-    gulp.src([
-        'bits-ui/ui/**/*.rt.html',
-        'bits-ui/ui/**/*.rt.js'
-    ])
+    gulp.src('bits-ui/ui/**/*.rt.html')
     .pipe(riot())
     .pipe(concat('bits.rt.js'))
     .pipe(gulp.dest('dist/'));

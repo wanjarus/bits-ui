@@ -1,0 +1,9 @@
+<icon>
+    <svg class="{opts.class}">
+        <use xlink:href="{href}#{opts.class}"></use>
+    </svg>
+    <script>
+    var self = this;
+    self.href = document.querySelector('xlink[icon="adwaita"]').getAttribute('href');
+    </script>
+</icon>

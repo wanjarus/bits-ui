@@ -309,6 +309,42 @@
   background-color: #22ffc6;
   color: #000;
 }
+.border-top-radius {
+  border-top-left-radius: 0.2em;
+  border-top-right-radius: 0.2em;
+}
+.border-right-radius {
+  border-top-right-radius: 0.2em;
+  border-bottom-right-radius: 0.2em;
+}
+.border-bottom-radius {
+  border-bottom-right-radius: 0.2em;
+  border-bottom-left-radius: 0.2em;
+}
+.border-left-radius {
+  border-top-left-radius: 0.2em;
+  border-bottom-left-radius: 0.2em;
+}
+.lift-1 {
+  -webkit-box-shadow: 0 1px 3px 0 #4d4d4d;
+  box-shadow: 0 1px 3px 0 #4d4d4d;
+}
+.lift-2 {
+  -webkit-box-shadow: 0 2px 5px 0 #4d4d4d;
+  box-shadow: 0 2px 5px 0 #4d4d4d;
+}
+.lift-3 {
+  -webkit-box-shadow: 0 4px 9px 0 #4d4d4d;
+  box-shadow: 0 4px 9px 0 #4d4d4d;
+}
+.lift-4 {
+  -webkit-box-shadow: 0 8px 17px 0 #4d4d4d;
+  box-shadow: 0 8px 17px 0 #4d4d4d;
+}
+.lift-5 {
+  -webkit-box-shadow: 0 16px 33px 0 #4d4d4d;
+  box-shadow: 0 16px 33px 0 #4d4d4d;
+}
 html {
   font-size: 16px;
   line-height: 1.5;
@@ -341,22 +377,6 @@ blockquote {
   margin-left: 2rem;
   padding-left: 1rem;
   border-left: 4px solid #22caff;
-}
-.border-top-radius {
-  border-top-left-radius: 0.2em;
-  border-top-right-radius: 0.2em;
-}
-.border-right-radius {
-  border-top-right-radius: 0.2em;
-  border-bottom-right-radius: 0.2em;
-}
-.border-bottom-radius {
-  border-bottom-right-radius: 0.2em;
-  border-bottom-left-radius: 0.2em;
-}
-.border-left-radius {
-  border-top-left-radius: 0.2em;
-  border-bottom-left-radius: 0.2em;
 }
 badge,
 .badge,
@@ -761,7 +781,13 @@ card > p,
 }
 card > button:last-of-type,
 [data-is="card"] > button:last-of-type,
-.card > button:last-of-type {
+.card > button:last-of-type,
+card > .button:last-of-type,
+[data-is="card"] > .button:last-of-type,
+.card > .button:last-of-type,
+card > [data-is="button"]:last-of-type,
+[data-is="card"] > [data-is="button"]:last-of-type,
+.card > [data-is="button"]:last-of-type {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   width: 100%;
@@ -929,6 +955,17 @@ hr {
   border: none;
   height: 1px;
   background-color: #cfcfcf;
+}
+icon,
+[data-is="icon"] {
+  display: inline;
+  vertical-align: middle;
+}
+icon svg,
+[data-is="icon"] svg {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
 }
 input[type="range"] {
   -webkit-appearance: none;
@@ -1630,7 +1667,6 @@ switch [ref="row"] span,
   -webkit-align-items: center;
   align-items: center;
   width: 50%;
-  margin-top: 0.1em;
 }
 switch [ref="off"],
 [data-is="switch"] [ref="off"] {

@@ -16,6 +16,11 @@ riot.tag2('file', '<yield></yield>', '', '', function(opts) {
     });
 });
 
+riot.tag2('icon', '<svg class="{opts.class}"> <use xlink:href="{href}#{opts.class}"></use> </svg>', '', '', function(opts) {
+    var self = this;
+    self.href = document.querySelector('xlink[icon="adwaita"]').getAttribute('href');
+});
+
 riot.tag2('markdown', '', '', '', function(opts) {
     var self = this;
 

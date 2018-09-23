@@ -1,0 +1,156 @@
+[class^="adwaita-"], [class*=" adwaita-"] {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+/* ==========================================
+Single-colored icons can be modified like so:
+.adwaita-name {
+  font-size: 32px;
+  color: red;
+}
+========================================== */
+
+.adwaita-alarm {
+  width: 0.9951171875em;
+}
+
+.adwaita-bluetooth-active {
+  width: 0.998046875em;
+}
+
+.adwaita-folder-open {
+  width: 1.001953125em;
+}
+
+.adwaita-network-wired-acquiring {
+  width: 1.0029296875em;
+}
+
+.adwaita-network-wired-no-route {
+  width: 1.0029296875em;
+}
+
+.adwaita-orientation-portrait {
+  width: 1.0029296875em;
+}
+
+.adwaita-orientation-portrait-inverse {
+  width: 1.0029296875em;
+}
+
+.adwaita-rotation-allowed {
+  width: 0.9970703125em;
+}
+
+.adwaita-rotation-locked {
+  width: 0.9990234375em;
+}
+
+.adwaita-weather-windy {
+  width: 1.0009765625em;
+}
+
+.adwaita-folder {
+  width: 1.001953125em;
+}
+
+.adwaita-folder-remote {
+  width: 1.0009765625em;
+}
+
+.adwaita-user-home {
+  width: 1.0009765625em;
+}
+
+.adwaita-audio-volume-overamplified {
+  width: 0.9990234375em;
+}
+
+.adwaita-colorimeter-colorhug {
+  width: 0.9990234375em;
+}
+
+.adwaita-drive-harddisk-system {
+  width: 0.875em;
+}
+
+.adwaita-input-mouse {
+  width: 0.9990234375em;
+}
+
+.adwaita-input-tablet {
+  width: 1.033203125em;
+}
+
+.adwaita-accessories-text-editor {
+  width: 0.9990234375em;
+}
+
+.adwaita-bluetooth {
+  width: 0.998046875em;
+}
+
+.adwaita-document-properties {
+  width: 0.9990234375em;
+}
+
+.adwaita-edit-cut {
+  width: 0.9990234375em;
+}
+
+.adwaita-edit-select-all {
+  width: 1.001953125em;
+}
+
+.adwaita-find-location {
+  width: 0.998046875em;
+}
+
+.adwaita-focus-top-bar {
+  width: 1.001953125em;
+}
+
+.adwaita-go-home {
+  width: 1.0009765625em;
+}
+
+.adwaita-insert-link {
+  width: 1.0009765625em;
+}
+
+.adwaita-system-shutdown {
+  width: 0.998046875em;
+}
+
+.adwaita-tab-new {
+  width: 1.001953125em;
+}
+
+.adwaita-view-mirror {
+  width: 1.001953125em;
+}
+
+.adwaita-view-restore {
+  width: 1.00390625em;
+}
+
+.adwaita-zoom-fit-best {
+  width: 0.9990234375em;
+}
+
+.adwaita-zoom-in {
+  width: 0.9990234375em;
+}
+
+.adwaita-zoom-original {
+  width: 0.9990234375em;
+}
+
+.adwaita-zoom-out {
+  width: 0.9990234375em;
+}
