@@ -24,7 +24,6 @@
                 onChange: self.on_change
             });
         }
-        self.set_interval();
         for (i=0; i<self.slides.length; i++) {
             var dot = document.createElement('dot');
             dot.dataset.i = i;
@@ -35,6 +34,7 @@
         };
         self.dots = self.refs.nav.querySelectorAll('dot');
         self.dots[0].classList.add('selected');
+        self.set_interval();
     });
 
     nav_click (event) {
