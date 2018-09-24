@@ -1,9 +1,20 @@
 <icon>
-    <svg class="{opts.class}">
-        <use xlink:href="{href}#{opts.class}"></use>
-    </svg>
+    <svg ref="svg" class="{opts.theme} {opts.name}"></svg>
     <script>
     var self = this;
-    self.href = document.querySelector('xlink[icon="adwaita"]').getAttribute('href');
+    var meta = document.querySelector(
+        'link[rel="icon-svg"][name="' + self.opts.theme + '"]'
+    );
+    self.href = meta.getAttribute('href');
+    self.on('mount', function(){
+        var use = document.createElementNS(
+            'http://www.w3.org/2000/svg',
+            'use');
+        use.setAttributeNS(
+            'http://www.w3.org/1999/xlink',
+            'xlink:href',
+            self.href + '#' + self.opts.name);
+        self.refs['svg'].appendChild(use);
+    })
     </script>
 </icon>

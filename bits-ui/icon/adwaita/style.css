@@ -1,4 +1,4 @@
-[class^="adwaita-"], [class*=" adwaita-"] {
+.adwaita {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -9,148 +9,148 @@
 
 /* ==========================================
 Single-colored icons can be modified like so:
-.adwaita-name {
+.name {
   font-size: 32px;
   color: red;
 }
 ========================================== */
 
-.adwaita-alarm {
+.alarm {
   width: 0.9951171875em;
 }
 
-.adwaita-bluetooth-active {
+.bluetooth-active {
   width: 0.998046875em;
 }
 
-.adwaita-folder-open {
+.folder-open {
   width: 1.001953125em;
 }
 
-.adwaita-network-wired-acquiring {
+.network-wired-acquiring {
   width: 1.0029296875em;
 }
 
-.adwaita-network-wired-no-route {
+.network-wired-no-route {
   width: 1.0029296875em;
 }
 
-.adwaita-orientation-portrait {
+.orientation-portrait {
   width: 1.0029296875em;
 }
 
-.adwaita-orientation-portrait-inverse {
+.orientation-portrait-inverse {
   width: 1.0029296875em;
 }
 
-.adwaita-rotation-allowed {
+.rotation-allowed {
   width: 0.9970703125em;
 }
 
-.adwaita-rotation-locked {
+.rotation-locked {
   width: 0.9990234375em;
 }
 
-.adwaita-weather-windy {
+.weather-windy {
   width: 1.0009765625em;
 }
 
-.adwaita-folder {
+.folder {
   width: 1.001953125em;
 }
 
-.adwaita-folder-remote {
+.folder-remote {
   width: 1.0009765625em;
 }
 
-.adwaita-user-home {
+.user-home {
   width: 1.0009765625em;
 }
 
-.adwaita-audio-volume-overamplified {
+.audio-volume-overamplified {
   width: 0.9990234375em;
 }
 
-.adwaita-colorimeter-colorhug {
+.colorimeter-colorhug {
   width: 0.9990234375em;
 }
 
-.adwaita-drive-harddisk-system {
+.drive-harddisk-system {
   width: 0.875em;
 }
 
-.adwaita-input-mouse {
+.input-mouse {
   width: 0.9990234375em;
 }
 
-.adwaita-input-tablet {
+.input-tablet {
   width: 1.033203125em;
 }
 
-.adwaita-accessories-text-editor {
+.accessories-text-editor {
   width: 0.9990234375em;
 }
 
-.adwaita-bluetooth {
+.bluetooth {
   width: 0.998046875em;
 }
 
-.adwaita-document-properties {
+.document-properties {
   width: 0.9990234375em;
 }
 
-.adwaita-edit-cut {
+.edit-cut {
   width: 0.9990234375em;
 }
 
-.adwaita-edit-select-all {
+.edit-select-all {
   width: 1.001953125em;
 }
 
-.adwaita-find-location {
+.find-location {
   width: 0.998046875em;
 }
 
-.adwaita-focus-top-bar {
+.focus-top-bar {
   width: 1.001953125em;
 }
 
-.adwaita-go-home {
+.go-home {
   width: 1.0009765625em;
 }
 
-.adwaita-insert-link {
+.insert-link {
   width: 1.0009765625em;
 }
 
-.adwaita-system-shutdown {
+.system-shutdown {
   width: 0.998046875em;
 }
 
-.adwaita-tab-new {
+.tab-new {
   width: 1.001953125em;
 }
 
-.adwaita-view-mirror {
+.view-mirror {
   width: 1.001953125em;
 }
 
-.adwaita-view-restore {
+.view-restore {
   width: 1.00390625em;
 }
 
-.adwaita-zoom-fit-best {
+.zoom-fit-best {
   width: 0.9990234375em;
 }
 
-.adwaita-zoom-in {
+.zoom-in {
   width: 0.9990234375em;
 }
 
-.adwaita-zoom-original {
+.zoom-original {
   width: 0.9990234375em;
 }
 
-.adwaita-zoom-out {
+.zoom-out {
   width: 0.9990234375em;
 }

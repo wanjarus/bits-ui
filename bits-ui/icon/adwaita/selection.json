@@ -9270,7 +9270,7 @@
       },
       "attrs": [],
       "properties": {
-        "order": 798,
+        "order": 956,
         "id": 157,
         "name": "preferences-system-sharing",
         "prevSize": 32,
@@ -13714,9 +13714,9 @@
       "classSelector": ".icon"
     },
     "imagePref": {
-      "prefix": "adwaita-",
+      "prefix": "",
       "png": false,
-      "useClassSelector": false,
+      "useClassSelector": true,
       "color": 0,
       "bgColor": 16777215,
       "classSelector": ".adwaita",
@@ -13734,7 +13734,7 @@
     "historySize": 50,
     "showCodes": false,
     "gridSize": 16,
-    "showLiga": true,
+    "showLiga": false,
     "quickUsageToken": {
       "Adwaita": "YjNlM2I2NmE2YzkyYTZkZTgzOGM2MDdiMWEwMTg5OWMjMSMxNTM3Njg4MjA0IyMj"
     }
