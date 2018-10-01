@@ -16,9 +16,26 @@ riot.tag2('file', '<yield></yield>', '', '', function(opts) {
     });
 });
 
-riot.tag2('icon', '<svg class="{opts.class}"> <use xlink:href="{href}#{opts.class}"></use> </svg>', '', '', function(opts) {
+riot.tag2('icon', '<svg ref="svg" class="{opts.theme} {opts.name}"></svg>', '', '', function(opts) {
     var self = this;
-    self.href = document.querySelector('xlink[icon="adwaita"]').getAttribute('href');
+    var meta = document.querySelector(
+        'link[rel="icon-svg"][theme="' + self.opts.theme + '"]'
+    );
+    try {
+        self.href = meta.getAttribute('href');
+    } catch (err) {
+        console.log('Bits icon can\'t find <link rel="icon-svg">')
+    };
+    self.on('mount', function(){
+        var use = document.createElementNS(
+            'http://www.w3.org/2000/svg',
+            'use');
+        use.setAttributeNS(
+            'http://www.w3.org/1999/xlink',
+            'xlink:href',
+            self.href + '#' + self.opts.name);
+        self.refs['svg'].appendChild(use);
+    })
 });
 
 riot.tag2('markdown', '', '', '', function(opts) {
@@ -132,20 +149,14 @@ riot.tag2('slide', '<div ref="slide"> <yield></yield> </div> <div ref="nav"></di
         self.refs.slide.addEventListener('click', self.clear_interval, false);
         self.refs.slide.ondragstart = self.clear_interval;
         self.slides = self.refs.slide.querySelectorAll('.slide')
-        if (opts) {
-            opts.selector = self.refs.slide;
-            opts.loop = true;
-            opts.onChange = self.on_change;
-            self.siema = new Siema(opts);
-        } else {
-            self.siema = new Siema({
-                selector: self.refs.slide,
-                loop: true,
-                duration: 300,
-                onChange: self.on_change
-            });
-        }
-        self.set_interval();
+        var siema = {
+            "selector": self.refs.slide,
+            "loop": true,
+            "onChange": self.on_change,
+            "duration": 300
+        };
+        for (var key in opts) siema[key] = opts[key];
+        self.siema = new Siema(siema);
         for (i=0; i<self.slides.length; i++) {
             var dot = document.createElement('dot');
             dot.dataset.i = i;
@@ -156,6 +167,7 @@ riot.tag2('slide', '<div ref="slide"> <yield></yield> </div> <div ref="nav"></di
         };
         self.dots = self.refs.nav.querySelectorAll('dot');
         self.dots[0].classList.add('selected');
+        self.set_interval();
     });
 
     this.nav_click = function (event) {
@@ -178,7 +190,7 @@ riot.tag2('slide', '<div ref="slide"> <yield></yield> </div> <div ref="nav"></di
         self.interval = setInterval(function(){
             self.siema.next();
         }, 4000)
-    }.bind(this);
+    }.bind(this)
 
     this.clear_interval = function () {
         clearInterval(self.interval);
@@ -199,34 +211,41 @@ riot.tag2('switch', '<yield></yield> <div ref="row"> <span ref="on">{opts.on}</s
 
 riot.tag2('toggle-btn', '<yield></yield>', '', '', function(opts) {
     var self = this;
-
+    if (!self.opts['bg-color']) self.opts['bg-color'] = 'bg-p';
+    if (!self.opts['toggle-color']) self.opts['toggle-color'] = 'bg-c';
     self.on('mount', function(){
         self.checkbox = self.root.querySelector('input');
+        self.button = self.root.querySelector('button');
+        self.button.classList.add(self.opts['bg-color']);
         self.checkbox.onclick = self.on_click;
     });
 
     this.on_click = function(event) {
         if (self.checkbox.checked === true) {
-            self.root.classList.add('active');
+            self.button.classList.add(self.opts['toggle-color']);
         } else {
-            self.root.classList.remove('active');
+            self.button.classList.remove(self.opts['toggle-color']);
         }
     }.bind(this)
 });
 
 riot.tag2('toggle-pin', '<yield></yield>', '', '', function(opts) {
     var self = this;
+    if (!self.opts['bg-color']) self.opts['bg-color'] = 'bg-p';
+    if (!self.opts['toggle-color']) self.opts['toggle-color'] = 'bg-c';
 
     self.on('mount', function(){
         self.checkbox = self.root.querySelector('input');
+        self.button = self.root.querySelector('button-pin');
+        self.button.classList.add(self.opts['bg-color']);
         self.checkbox.onclick = self.on_click;
     });
 
     this.on_click = function(event) {
         if (self.checkbox.checked === true) {
-            self.root.classList.add('active');
+            self.button.classList.add(self.opts['toggle-color']);
         } else {
-            self.root.classList.remove('active');
+            self.button.classList.remove(self.opts['toggle-color']);
         }
     }.bind(this)
 });
