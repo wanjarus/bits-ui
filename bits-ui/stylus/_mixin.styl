@@ -210,19 +210,9 @@ toggle-btn($toggle-color=$button-color)
         width: 100%
         height: 100%
 
-    button
-        bg-color(darken(white, 10%))
-        border-top: 0.2em solid @color
-        padding-bottom: 0
-        box-sizing: content-box
-
     input[type="checkbox"]:hover
         ~ button
             box-shadow: 0px 2px 2px 0px darken(white, 70%)
-
-    input[type="checkbox"]:checked
-        ~ button
-            border-color: $color-p
 
 toggle-pin($toggle-color=$button-color)
     ui-font()
@@ -240,14 +230,6 @@ toggle-pin($toggle-color=$button-color)
         width: 100%
         height: 100%
 
-    button-pin
-        bg-color(darken(white, 10%))
-
     input[type="checkbox"]:hover
-        background-color: red
         ~ button-pin
             box-shadow: 0px 2px 2px 0px darken(white, 70%)
-
-    input[type="checkbox"]:checked
-        ~ button-pin
-            color: $color-p

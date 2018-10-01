@@ -11,19 +11,14 @@
         self.refs.slide.addEventListener('click', self.clear_interval, false);
         self.refs.slide.ondragstart = self.clear_interval;
         self.slides = self.refs.slide.querySelectorAll('.slide')
-        if (opts) {
-            opts.selector = self.refs.slide;
-            opts.loop = true;
-            opts.onChange = self.on_change;
-            self.siema = new Siema(opts);
-        } else {
-            self.siema = new Siema({
-                selector: self.refs.slide,
-                loop: true,
-                duration: 300,
-                onChange: self.on_change
-            });
-        }
+        var siema = {
+            "selector": self.refs.slide,
+            "loop": true,
+            "onChange": self.on_change,
+            "duration": 300
+        };
+        for (var key in opts) siema[key] = opts[key];
+        self.siema = new Siema(siema);
         for (i=0; i<self.slides.length; i++) {
             var dot = document.createElement('dot');
             dot.dataset.i = i;
@@ -57,7 +52,7 @@
         self.interval = setInterval(function(){
             self.siema.next();
         }, 4000)
-    };
+    }
 
     clear_interval () {
         clearInterval(self.interval);

@@ -3,9 +3,13 @@
     <script>
     var self = this;
     var meta = document.querySelector(
-        'link[rel="icon-svg"][name="' + self.opts.theme + '"]'
+        'link[rel="icon-svg"][theme="' + self.opts.theme + '"]'
     );
-    self.href = meta.getAttribute('href');
+    try {
+        self.href = meta.getAttribute('href');
+    } catch (err) {
+        console.log('Bits icon can\'t find <link rel="icon-svg">')
+    };
     self.on('mount', function(){
         var use = document.createElementNS(
             'http://www.w3.org/2000/svg',

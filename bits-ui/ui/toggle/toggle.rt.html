@@ -2,17 +2,20 @@
     <yield/>
     <script>
     var self = this;
-
+    if (!self.opts['bg-color']) self.opts['bg-color'] = 'bg-p';
+    if (!self.opts['toggle-color']) self.opts['toggle-color'] = 'bg-c';
     self.on('mount', function(){
         self.checkbox = self.root.querySelector('input');
+        self.button = self.root.querySelector('button');
+        self.button.classList.add(self.opts['bg-color']);
         self.checkbox.onclick = self.on_click;
     });
 
     on_click(event) {
         if (self.checkbox.checked === true) {
-            self.root.classList.add('active');
+            self.button.classList.add(self.opts['toggle-color']);
         } else {
-            self.root.classList.remove('active');
+            self.button.classList.remove(self.opts['toggle-color']);
         }
     }
     </script>
@@ -22,17 +25,21 @@
     <yield/>
     <script>
     var self = this;
+    if (!self.opts['bg-color']) self.opts['bg-color'] = 'bg-p';
+    if (!self.opts['toggle-color']) self.opts['toggle-color'] = 'bg-c';
 
     self.on('mount', function(){
         self.checkbox = self.root.querySelector('input');
+        self.button = self.root.querySelector('button-pin');
+        self.button.classList.add(self.opts['bg-color']);
         self.checkbox.onclick = self.on_click;
     });
 
     on_click(event) {
         if (self.checkbox.checked === true) {
-            self.root.classList.add('active');
+            self.button.classList.add(self.opts['toggle-color']);
         } else {
-            self.root.classList.remove('active');
+            self.button.classList.remove(self.opts['toggle-color']);
         }
     }
     </script>

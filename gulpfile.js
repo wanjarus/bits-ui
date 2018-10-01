@@ -38,7 +38,7 @@ function dist(){
 
     gulp.src('bits-ui/ui/**/*.rt.html')
     .pipe(riot())
-    .pipe(concat('bits.rt.js'))
+    .pipe(concat('bits-ui.js'))
     .pipe(gulp.dest('dist/'));
 
     return gulp.src('bits-ui/stylus/bits-ui.styl')
@@ -47,7 +47,7 @@ function dist(){
         use: nib(), import: ['nib']
     }))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('dist/'))
+    .pipe(gulp.dest('dist/'));
 };
 
 gulp.task('default', gulp.series(dist));
