@@ -44,7 +44,7 @@ input[type="range"]
 
 input-text()
     ui-font()
-    border: 1px solid
+    border: 1px solid grey
     border-radius: $border-radius
     line-height: 2
     padding: 0 0.4em
@@ -57,3 +57,18 @@ input
 
     &[type="text"], &[type="password"], &[type="email"]
         input-text()
+
+input[type="number"]
+    &::-webkit-inner-spin-button
+        appearance: none
+    -moz-appearance: textfield;
+
+input-number
+    display: flex
+    input
+        border-right-radius(0)
+        min-width: 3em
+    button-group
+        width: 4em
+        button-square:first-of-type
+            border-left-radius(0)
