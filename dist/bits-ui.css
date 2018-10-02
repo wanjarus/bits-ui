@@ -779,7 +779,16 @@ button-group .button,
 [data-is="button-group"] .button,
 button-group [data-is="button"],
 .button-group [data-is="button"],
-[data-is="button-group"] [data-is="button"] {
+[data-is="button-group"] [data-is="button"],
+button-group button-square,
+.button-group button-square,
+[data-is="button-group"] button-square,
+button-group .button-square,
+.button-group .button-square,
+[data-is="button-group"] .button-square,
+button-group [data-is="button-square"],
+.button-group [data-is="button-square"],
+[data-is="button-group"] [data-is="button-square"] {
   width: 100%;
   border-radius: 0;
 }
@@ -791,7 +800,16 @@ button-group .button:first-of-type,
 [data-is="button-group"] .button:first-of-type,
 button-group [data-is="button"]:first-of-type,
 .button-group [data-is="button"]:first-of-type,
-[data-is="button-group"] [data-is="button"]:first-of-type {
+[data-is="button-group"] [data-is="button"]:first-of-type,
+button-group button-square:first-of-type,
+.button-group button-square:first-of-type,
+[data-is="button-group"] button-square:first-of-type,
+button-group .button-square:first-of-type,
+.button-group .button-square:first-of-type,
+[data-is="button-group"] .button-square:first-of-type,
+button-group [data-is="button-square"]:first-of-type,
+.button-group [data-is="button-square"]:first-of-type,
+[data-is="button-group"] [data-is="button-square"]:first-of-type {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   border-top-left-radius: 0.2em;
@@ -805,7 +823,16 @@ button-group .button:last-of-type,
 [data-is="button-group"] .button:last-of-type,
 button-group [data-is="button"]:last-of-type,
 .button-group [data-is="button"]:last-of-type,
-[data-is="button-group"] [data-is="button"]:last-of-type {
+[data-is="button-group"] [data-is="button"]:last-of-type,
+button-group button-square:last-of-type,
+.button-group button-square:last-of-type,
+[data-is="button-group"] button-square:last-of-type,
+button-group .button-square:last-of-type,
+.button-group .button-square:last-of-type,
+[data-is="button-group"] .button-square:last-of-type,
+button-group [data-is="button-square"]:last-of-type,
+.button-group [data-is="button-square"]:last-of-type,
+[data-is="button-group"] [data-is="button-square"]:last-of-type {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   border-top-right-radius: 0.2em;
@@ -1093,7 +1120,7 @@ input[type="range"]::-moz-range-thumb:active {
 input {
   font-family: "Cantarell";
   font-size: 1em;
-  border: 1px solid;
+  border: 1px solid #9e9e9e;
   border-radius: 0.2em;
   line-height: 2;
   padding: 0 0.4em;
@@ -1108,7 +1135,7 @@ input[type="password"],
 input[type="email"] {
   font-family: "Cantarell";
   font-size: 1em;
-  border: 1px solid;
+  border: 1px solid #9e9e9e;
   border-radius: 0.2em;
   line-height: 2;
   padding: 0 0.4em;
@@ -1119,6 +1146,34 @@ input[type="email"]:focus {
   -webkit-box-shadow: 0 1px 3px 0 #4d4d4d;
   box-shadow: 0 1px 3px 0 #4d4d4d;
   outline-color: #ff5722;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+input-number {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+}
+input-number input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  min-width: 3em;
+}
+input-number button-group {
+  width: 4em;
+}
+input-number button-group button-square:first-of-type {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 ul[data-is="menu-accordion"] {
   padding: 0;

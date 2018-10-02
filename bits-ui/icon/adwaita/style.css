@@ -16,15 +16,59 @@ Single-colored icons can be modified like so:
 ========================================== */
 
 .alarm {
-  width: 0.9951171875em;
+  width: 0.9990234375em;
 }
 
-.bluetooth-active {
+.application-x-firmware {
+  width: 1.0009765625em;
+}
+
+.audio-speakers {
+  width: 0.99609375em;
+}
+
+.audio-volume-overamplified {
+  width: 0.9990234375em;
+}
+
+.colorimeter-colorhug {
+  width: 0.9990234375em;
+}
+
+.edit-select-all {
+  width: 1.001953125em;
+}
+
+.find-location {
   width: 0.998046875em;
 }
 
-.folder-open {
+.focus-top-bar {
   width: 1.001953125em;
+}
+
+.folder-download {
+  width: 1.0009765625em;
+}
+
+.folder-drag-accept {
+  width: 1.0009765625em;
+}
+
+.folder-pictures {
+  width: 1.001953125em;
+}
+
+.go-home {
+  width: 1.0009765625em;
+}
+
+.input-mouse {
+  width: 0.9990234375em;
+}
+
+.insert-link {
+  width: 1.0009765625em;
 }
 
 .network-wired-acquiring {
@@ -43,6 +87,10 @@ Single-colored icons can be modified like so:
   width: 1.0029296875em;
 }
 
+.preferences-desktop-accessibility {
+  width: 1.0009765625em;
+}
+
 .rotation-allowed {
   width: 0.9970703125em;
 }
@@ -51,15 +99,15 @@ Single-colored icons can be modified like so:
   width: 0.9990234375em;
 }
 
-.weather-windy {
-  width: 1.0009765625em;
+.system-reboot {
+  width: 0.9990234375em;
 }
 
-.folder {
-  width: 1.001953125em;
+.system-shutdown {
+  width: 0.9990234375em;
 }
 
-.folder-remote {
+.tab-new {
   width: 1.0009765625em;
 }
 
@@ -67,76 +115,12 @@ Single-colored icons can be modified like so:
   width: 1.0009765625em;
 }
 
-.audio-volume-overamplified {
-  width: 0.9990234375em;
-}
-
-.colorimeter-colorhug {
-  width: 0.9990234375em;
-}
-
-.drive-harddisk-system {
-  width: 0.875em;
-}
-
-.input-mouse {
-  width: 0.9990234375em;
-}
-
-.input-tablet {
-  width: 1.033203125em;
-}
-
-.accessories-text-editor {
-  width: 0.9990234375em;
-}
-
-.bluetooth {
-  width: 0.998046875em;
-}
-
-.document-properties {
-  width: 0.9990234375em;
-}
-
-.edit-cut {
-  width: 0.9990234375em;
-}
-
-.edit-select-all {
-  width: 1.001953125em;
-}
-
-.find-location {
-  width: 0.998046875em;
-}
-
-.focus-top-bar {
-  width: 1.001953125em;
-}
-
-.go-home {
+.weather-fog {
   width: 1.0009765625em;
 }
 
-.insert-link {
+.weather-windy {
   width: 1.0009765625em;
-}
-
-.system-shutdown {
-  width: 0.998046875em;
-}
-
-.tab-new {
-  width: 1.001953125em;
-}
-
-.view-mirror {
-  width: 1.001953125em;
-}
-
-.view-restore {
-  width: 1.00390625em;
 }
 
 .zoom-fit-best {

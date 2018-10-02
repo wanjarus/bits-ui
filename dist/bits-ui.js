@@ -38,6 +38,38 @@ riot.tag2('icon', '<svg ref="svg" class="{opts.theme} {opts.name}"></svg>', '', 
     })
 });
 
+riot.tag2('input-number', '<input max="5" min="0" step="1" value="0" type="number"> <button-group> <button-square onclick="{up}">+</button-square> <button-square onclick="{down}">-</button-square> </button-group>', '', '', function(opts) {
+    var self = this;
+    self.option = {
+        "step": 1,
+        "max": null,
+        "min": null
+    }
+
+    self.on('mount', function(opts){
+        self.input = self.root.querySelector('input');
+        self.option.step = Number(self.input.getAttribute('step'));
+        self.option.min = Number(self.input.getAttribute('min'));
+        self.option.max = Number(self.input.getAttribute('max'));
+    });
+
+    this.up = function (event) {
+        var value = Number(self.input.value) + self.option.step;
+        if (self.option.max !== null && value > self.option.max) {
+            return;
+        }
+        self.input.value = value;
+    }.bind(this)
+
+    this.down = function (event) {
+        var value = Number(self.input.value) - self.option.step;
+        if (self.option.min !== null && value < self.option.min) {
+            return;
+        }
+        self.input.value = value;
+    }.bind(this)
+});
+
 riot.tag2('markdown', '', '', '', function(opts) {
     var self = this;
 
