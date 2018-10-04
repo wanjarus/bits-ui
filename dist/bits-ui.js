@@ -38,6 +38,22 @@ riot.tag2('icon', '<svg ref="svg" class="{opts.theme} {opts.name}"></svg>', '', 
     })
 });
 
+riot.tag2('markdown', '', '', '', function(opts) {
+    var self = this;
+
+    self.on('mount', function(){
+        fetch(self.root.getAttribute('src')).then(function(response){
+            return response.text();
+        }).then(function(markdown){
+            self.root.innerHTML = marked(markdown);
+            if (Prism) {
+                Prism.highlightAllUnder(self.root);
+            };
+        });
+    })
+
+});
+
 riot.tag2('input-number', '<input max="5" min="0" step="1" value="0" type="number"> <button-group> <button-square onclick="{up}">+</button-square> <button-square onclick="{down}">-</button-square> </button-group>', '', '', function(opts) {
     var self = this;
     self.option = {
@@ -68,22 +84,6 @@ riot.tag2('input-number', '<input max="5" min="0" step="1" value="0" type="numbe
         }
         self.input.value = value;
     }.bind(this)
-});
-
-riot.tag2('markdown', '', '', '', function(opts) {
-    var self = this;
-
-    self.on('mount', function(){
-        fetch(self.root.getAttribute('src')).then(function(response){
-            return response.text();
-        }).then(function(markdown){
-            self.root.innerHTML = marked(markdown);
-            if (Prism) {
-                Prism.highlightAllUnder(self.root);
-            };
-        });
-    })
-
 });
 
 riot.tag2('menu-accordion', '<yield></yield>', '', '', function(opts) {
