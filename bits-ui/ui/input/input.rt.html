@@ -1,5 +1,5 @@
 <input-number>
-    <input type="number" max="5" min="0" step="1" value="0">
+    <yield/>
     <button-group>
         <button-square onclick={up}>+</button-square>
         <button-square onclick={down}>-</button-square>
@@ -9,14 +9,20 @@
     self.option = {
         "step": 1,
         "max": null,
-        "min": null
+        "min": null,
+        "value": 0
     }
 
     self.on('mount', function(opts){
         self.input = self.root.querySelector('input');
-        self.option.step = Number(self.input.getAttribute('step'));
-        self.option.min = Number(self.input.getAttribute('min'));
-        self.option.max = Number(self.input.getAttribute('max'));
+        option = self.input.getAttribute('step');
+        if (option) {self.option.step = Number(option)};
+        option = self.input.getAttribute('min');
+        if (option) {self.option.min = Number(option)};
+        option = self.input.getAttribute('max');
+        if (option) {self.option.max = Number(option)};
+        option = self.input.getAttribute('value');
+        if (option) {self.option.value = Number(option)};
     });
 
     up (event) {
