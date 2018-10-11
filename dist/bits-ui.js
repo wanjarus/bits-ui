@@ -7,8 +7,7 @@ riot.tag2('checkbox', '<yield></yield> <span></span>', '', '', function(opts) {
 riot.tag2('file', '<yield></yield>', '', '', function(opts) {
     var self = this;
     self.on('mount', function(){
-        self.root.querySelector('button')
-            .addEventListener('click',
+        self.root.querySelector('button').addEventListener('click',
             function(){
                 self.root.querySelector('input[type="file"]').click();
             }
@@ -38,35 +37,25 @@ riot.tag2('icon', '<svg ref="svg" class="{opts.theme} {opts.name}"></svg>', '', 
     })
 });
 
-riot.tag2('markdown', '', '', '', function(opts) {
-    var self = this;
-
-    self.on('mount', function(){
-        fetch(self.root.getAttribute('src')).then(function(response){
-            return response.text();
-        }).then(function(markdown){
-            self.root.innerHTML = marked(markdown);
-            if (Prism) {
-                Prism.highlightAllUnder(self.root);
-            };
-        });
-    })
-
-});
-
-riot.tag2('input-number', '<input max="5" min="0" step="1" value="0" type="number"> <button-group> <button-square onclick="{up}">+</button-square> <button-square onclick="{down}">-</button-square> </button-group>', '', '', function(opts) {
+riot.tag2('input-number', '<yield></yield> <button-group> <button-square onclick="{up}">+</button-square> <button-square onclick="{down}">-</button-square> </button-group>', '', '', function(opts) {
     var self = this;
     self.option = {
         "step": 1,
         "max": null,
-        "min": null
+        "min": null,
+        "value": 0
     }
 
     self.on('mount', function(opts){
         self.input = self.root.querySelector('input');
-        self.option.step = Number(self.input.getAttribute('step'));
-        self.option.min = Number(self.input.getAttribute('min'));
-        self.option.max = Number(self.input.getAttribute('max'));
+        option = self.input.getAttribute('step');
+        if (option) {self.option.step = Number(option)};
+        option = self.input.getAttribute('min');
+        if (option) {self.option.min = Number(option)};
+        option = self.input.getAttribute('max');
+        if (option) {self.option.max = Number(option)};
+        option = self.input.getAttribute('value');
+        if (option) {self.option.value = Number(option)};
     });
 
     this.up = function (event) {
@@ -84,6 +73,22 @@ riot.tag2('input-number', '<input max="5" min="0" step="1" value="0" type="numbe
         }
         self.input.value = value;
     }.bind(this)
+});
+
+riot.tag2('markdown', '', '', '', function(opts) {
+    var self = this;
+
+    self.on('mount', function(){
+        fetch(self.root.getAttribute('src')).then(function(response){
+            return response.text();
+        }).then(function(markdown){
+            self.root.innerHTML = marked(markdown);
+            if (Prism) {
+                Prism.highlightAllUnder(self.root);
+            };
+        });
+    })
+
 });
 
 riot.tag2('menu-accordion', '<yield></yield>', '', '', function(opts) {
@@ -144,7 +149,10 @@ riot.tag2('sidebar', '<yield></yield>', '', '', function(opts) {
     var self = this;
 
     self.on('mount', function(){
-        self.opts.show = (typeof self.opts.show !== 'undefined') ? self.opts.show : '1000px';
+
+        if (typeof self.opts.show === 'undefined') {
+            return;
+        }
         media_query = '(min-width: ' + self.opts.show + ')';
         self.media_query = window.matchMedia(media_query);
         if (self.media_query.matches) {

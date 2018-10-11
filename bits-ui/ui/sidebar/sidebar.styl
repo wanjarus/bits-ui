@@ -1,5 +1,4 @@
 sidebar
-    ui-font()
     position: absolute
     top: 0
 
@@ -7,7 +6,6 @@ sidebar
         position: fixed
         z-index: 101
         height: 100%
-        background-color: white
         overflow-x: hidden
         overflow-y: auto
         transition: transform 0.3s
@@ -17,25 +15,25 @@ sidebar
         &.show
             transform: translateX(0)
 
-        ul.sidebar-ul
+    ul.sidebar-ul
+        margin: 0
+        list-style: none
+        padding-bottom: 3rem
+        a
+            line-height: 2rem
+            display: block
+            padding-left: 0.5rem
+            padding-right: 0.5rem
+        a:hover
+            background-color: $color-a1
+        li
+            padding-left: 0
+            min-height: 2rem
+            line-height: 2rem
+        ul
             margin: 0
             list-style: none
-            padding-bottom: 3rem
-            a
-                line-height: 2rem
-                display: block
-                padding-left: 0.5rem
-                padding-right: 0.5rem
-            a:hover
-                background-color: $color-a1
-            li
-                padding-left: 0
-                min-height: 2rem
-                line-height: 2rem
-                ul
-                    margin:0
-                    list-style: none
-                    padding-left: 0.8rem
+            padding-left: 0.8rem
 
     div[ref="overlay"]
         position: fixed
