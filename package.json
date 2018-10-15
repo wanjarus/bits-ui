@@ -1,6 +1,6 @@
 {
   "name": "bits-ui",
-  "version": "0.2.7dev",
+  "version": "0.2.7",
   "description": "UI Toolkit for Web",
   "main": "gulpfile.js",
   "dependencies": {
