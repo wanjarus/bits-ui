@@ -3,6 +3,8 @@ var gulp = require('gulp'),
     riot = require('gulp-riot'),
     stylus = require('gulp-stylus'),
     nib = require('nib'),
+    cssnano = require('gulp-cssnano'),
+    rename = require('gulp-rename'),
     sourcemaps = require('gulp-sourcemaps');
 
 function dist(){
@@ -13,6 +15,9 @@ function dist(){
     .pipe(gulp.dest('dist/'));
 
     gulp.src('node_modules/normalize.css/normalize.css')
+    .pipe(sourcemaps.init())
+    .pipe(cssnano())
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('dist/'));
 
     gulp.src('node_modules/urijs/src/**/*')
@@ -37,15 +42,33 @@ function dist(){
     .pipe(gulp.dest('dist/font/'))
 
     gulp.src('bits-ui/ui/**/*.rt.html')
+    .pipe(sourcemaps.init())
     .pipe(riot())
     .pipe(concat('bits-ui.js'))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('dist/'));
+
+    gulp.src('bits-ui/ui/**/*.rt.html')
+    .pipe(riot())
+    .pipe(concat('bits-ui.js'))
+    .pipe(gulp.dest('dist/'));
+
+    gulp.src('bits-ui/stylus/bits-ui.styl')
+    .pipe(sourcemaps.init())
+    .pipe(stylus({
+        use: nib(), import: ['nib']
+    }))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('dist/'));
 
     return gulp.src('bits-ui/stylus/bits-ui.styl')
     .pipe(sourcemaps.init())
     .pipe(stylus({
-        use: nib(), import: ['nib']
+        use: nib(),
+        import: ['nib'],
+        compress: true
     }))
+    .pipe(rename('bits-ui.min.css'))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('dist/'));
 };

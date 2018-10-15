@@ -548,7 +548,8 @@ badge,
 }
 button,
 .button,
-[data-is="button"] {
+[data-is="button"],
+input[type="button"] {
   display: -webkit-inline-box;
   display: -moz-inline-box;
   display: -webkit-inline-flex;
@@ -592,27 +593,31 @@ button,
 }
 button:hover,
 .button:hover,
-[data-is="button"]:hover {
+[data-is="button"]:hover,
+input[type="button"]:hover {
   background-color: #ff784e;
   -webkit-box-shadow: 0px 2px 2px 0px #4d4d4d;
   box-shadow: 0px 2px 2px 0px #4d4d4d;
 }
 button:active,
 .button:active,
-[data-is="button"]:active {
+[data-is="button"]:active,
+input[type="button"]:active {
   background-color: #e73700;
   -webkit-box-shadow: 0px 0px 2px 0px #4d4d4d;
   box-shadow: 0px 0px 2px 0px #4d4d4d;
 }
 button[disabled],
 .button[disabled],
-[data-is="button"][disabled] {
+[data-is="button"][disabled],
+input[type="button"][disabled] {
   background-color: #919191;
   color: #fff;
 }
 button[disabled]:hover,
 .button[disabled]:hover,
-[data-is="button"][disabled]:hover {
+[data-is="button"][disabled]:hover,
+input[type="button"][disabled]:hover {
   background-color: #919191;
   color: #fff;
 }

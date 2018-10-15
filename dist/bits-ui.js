@@ -289,3 +289,5 @@ riot.tag2('toggle-pin', '<yield></yield>', '', '', function(opts) {
         }
     }.bind(this)
 });
+
+//# sourceMappingURL=bits-ui.js.map
