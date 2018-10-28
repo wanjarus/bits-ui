@@ -1,6 +1,5 @@
 Bits UI
 =======
-Web User Interface Toolkit
-For fast development.
+Simple and elegant web UI with Javascript and CSS
 -------------------
 Documentation : https://bits-ui.com
