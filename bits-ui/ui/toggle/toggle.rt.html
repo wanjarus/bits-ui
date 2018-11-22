@@ -2,20 +2,23 @@
     <yield/>
     <script>
     var self = this;
-    if (!self.opts['bg-color']) self.opts['bg-color'] = 'bg-p';
-    if (!self.opts['toggle-color']) self.opts['toggle-color'] = 'bg-c';
+    if (!self.opts['bgColor']) self.opts['bgColor'] = 'bg-p';
+    if (!self.opts['activeColor']) self.opts['activeColor'] = 'bg-c';
     self.on('mount', function(){
+        console.log(self.opts);
         self.checkbox = self.root.querySelector('input');
         self.button = self.root.querySelector('button');
-        self.button.classList.add(self.opts['bg-color']);
+        self.button.classList.add(self.opts['bgColor']);
         self.checkbox.onclick = self.on_click;
     });
 
     on_click(event) {
         if (self.checkbox.checked === true) {
-            self.button.classList.add(self.opts['toggle-color']);
+            self.button.classList.remove(self.opts['bgColor']);
+            self.button.classList.add(self.opts['activeColor']);
         } else {
-            self.button.classList.remove(self.opts['toggle-color']);
+            self.button.classList.remove(self.opts['activeColor']);
+            self.button.classList.add(self.opts['bgColor']);
         }
     }
     </script>
@@ -25,21 +28,23 @@
     <yield/>
     <script>
     var self = this;
-    if (!self.opts['bg-color']) self.opts['bg-color'] = 'bg-p';
-    if (!self.opts['toggle-color']) self.opts['toggle-color'] = 'bg-c';
+    if (!self.opts['bgColor']) self.opts['bgColor'] = 'bg-p';
+    if (!self.opts['activeColor']) self.opts['activeColor'] = 'bg-c';
 
     self.on('mount', function(){
         self.checkbox = self.root.querySelector('input');
         self.button = self.root.querySelector('button-pin');
-        self.button.classList.add(self.opts['bg-color']);
+        self.button.classList.add(self.opts['bgColor']);
         self.checkbox.onclick = self.on_click;
     });
 
     on_click(event) {
         if (self.checkbox.checked === true) {
-            self.button.classList.add(self.opts['toggle-color']);
+            self.button.classList.remove(self.opts['bgColor']);
+            self.button.classList.add(self.opts['activeColor']);
         } else {
-            self.button.classList.remove(self.opts['toggle-color']);
+            self.button.classList.remove(self.opts['activeColor']);
+            self.button.classList.add(self.opts['bgColor']);
         }
     }
     </script>
