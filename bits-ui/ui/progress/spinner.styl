@@ -1,19 +1,33 @@
-spinner($color=$progress-color)
-    display: inline-block
-    vertical-align: middle
-    box-sizing: border-box
-    border: 0.3em solid lighten(grey, 70%)
-    border-radius: 50%;
-    border-top: 0.3em solid $color
-    width: 2em;
-    height: 2em;
-    animation: spinner 1s linear infinite;
-
 spinner
-    spinner()
+    display: inline-block
+    color: $color-p
+    svg
+        width: 3em
+        animation: spinner-rotate 2s linear infinite;
+        transform-origin: center center;
 
-@keyframes spinner
-  0%
-    transform: rotate(0deg)
-  100%
-    transform: rotate(360deg)
+    circle
+        stroke: currentColor
+        stroke-width: 0.2em
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+        animation: spinner-dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+        stroke-linecap: round;
+        fill: none
+
+    @keyframes spinner-rotate
+        100%
+            transform: rotate(360deg);
+
+    @keyframes spinner-dash
+        0%
+            stroke-dasharray: 1, 200;
+            stroke-dashoffset: 0;
+
+        50%
+            stroke-dasharray: 89, 200;
+            stroke-dashoffset: -35px;
+
+        100%
+            stroke-dasharray: 89, 200;
+            stroke-dashoffset: -124px;

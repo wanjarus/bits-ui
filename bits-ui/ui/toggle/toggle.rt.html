@@ -5,7 +5,6 @@
     if (!self.opts['bgColor']) self.opts['bgColor'] = 'bg-p';
     if (!self.opts['activeColor']) self.opts['activeColor'] = 'bg-c';
     self.on('mount', function(){
-        console.log(self.opts);
         self.checkbox = self.root.querySelector('input');
         self.button = self.root.querySelector('button');
         self.button.classList.add(self.opts['bgColor']);
