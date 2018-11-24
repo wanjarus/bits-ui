@@ -1,0 +1,46 @@
+slider-thumb($thumb-color=lighten(grey, 80%))
+    appearance: none
+    width: 1.2em
+    height: 1.2em
+    background-color: $thumb-color
+    border: 1px solid
+    border-color: darken($thumb-color, 50%)
+    border-radius: 50%
+    cursor: pointer
+
+
+
+slider(
+        $thumb-color=lighten(grey, 80%),
+        $thumb-color-active=$color-p,
+        $bar-color=lighten(grey, 50%))
+    appearance: none
+    height: 0.2em
+    background-color: $bar-color
+    outline: none
+    transition: opacity .2s
+    padding: 0
+
+    &::-webkit-slider-thumb
+        slider-thumb($thumb-color)
+    &::-webkit-slider-thumb:hover
+        background-color: $thumb-color-active
+    &::-webkit-slider-thumb:active
+        background-color: $thumb-color-active
+
+    &::-moz-range-thumb
+        slider-thumb($thumb-color)
+    &::-moz-range-thumb:hover
+        background-color: $thumb-color-active
+    &::-moz-range-thumb:active
+        background-color: $thumb-color-active
+
+input-text()
+    ui-font()
+    border: 1px solid grey
+    border-radius: 4px
+    line-height: 2
+    padding: 0 0.4em
+    &:focus
+        lift-1()
+        outline-color: $color-p

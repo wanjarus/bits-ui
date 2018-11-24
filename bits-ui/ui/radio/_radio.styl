@@ -1,4 +1,4 @@
-radio, [data-is="radio"]
+radio($color=$color-p)
     $width = 1.1em
     $height = 1.1em
     position: relative
@@ -31,11 +31,11 @@ radio, [data-is="radio"]
 
     /* On mouse-over, add a background color */
     &:hover input ~ span
-        background-color: $radio-color-hover
+        background-color: lighten($color, 20%)
 
     /* When the radio button is checked, add background color */
     input:checked ~ span
-        background-color: $radio-color-active
+        background-color: $color
 
     /* Create the indicator (the dot/circle - hidden when not checked) */
     span:after
@@ -54,7 +54,7 @@ radio, [data-is="radio"]
         width: 0.4em
         height: 0.4em
         border-radius: 50%
-        if darkshade($radio-color-active)
+        if darkshade($color)
             background-color: white
         else
             background-color: black

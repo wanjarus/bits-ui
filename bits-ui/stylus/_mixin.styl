@@ -1,6 +1,6 @@
 // @require '_default'
 
-darkshade($color=$color)
+darkshade($color)
     if hue($color) >= 30deg and (hue($color) <= 195deg)
         if dark($color)
             return true
@@ -12,26 +12,26 @@ darkshade($color=$color)
         else
             return false
 
-bg-color($bg-color=$bg-color)
+bg-color($bg-color)
     background-color: $bg-color
     if darkshade($bg-color)
         color: white
     else
         color: black
 
-border-top-radius($radius=$border-radius)
+border-top-radius($radius=4px)
     border-top-left-radius: $radius
     border-top-right-radius: $radius
 
-border-right-radius($radius=$border-radius)
+border-right-radius($radius=4px)
     border-top-right-radius: $radius
     border-bottom-right-radius: $radius
 
-border-bottom-radius($radius=$border-radius)
+border-bottom-radius($radius=4px)
     border-bottom-right-radius: $radius
     border-bottom-left-radius: $radius
 
-border-left-radius($radius=$border-radius)
+border-left-radius($radius=4px)
     border-top-left-radius: $radius
     border-bottom-left-radius: $radius
 
@@ -53,15 +53,6 @@ lift-4()
 
 lift-5()
     box-shadow: 0 16px 33px 0 darken(white, 70%)
-
-tag($color=$tag-color)
-    ui-font()
-    bg-color($color)
-    display: inline-block
-    text-align: center
-    border-radius: $border-radius
-    padding: 0.2em 0.4em
-    min-width: 1.2em
 
 toggle-btn($toggle-color=$button-color)
     ui-font()

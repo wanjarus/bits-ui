@@ -1,4 +1,4 @@
-button-group($border-radius=$border-radius)
+button-group($radius=4px)
     display: flex
     button, .button, [data-is="button"],
     button-square, .button-square, [data-is="button-square"]
@@ -6,17 +6,17 @@ button-group($border-radius=$border-radius)
         border-radius: 0
         &:first-of-type
             border-right-radius(0)
-            border-left-radius($border-radius)
+            border-left-radius($radius)
         &:last-of-type
             border-left-radius(0)
-            border-right-radius($border-radius)
+            border-right-radius($radius)
 
     radio-btn, tab
         &:first-of-type
             button
                 border-right-radius(0)
-                border-left-radius($border-radius)
+                border-left-radius($radius)
         &:last-of-type
             button
                 border-left-radius(0)
-                border-right-radius($border-radius)
+                border-right-radius($radius)

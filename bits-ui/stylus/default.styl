@@ -1,0 +1,106 @@
+badge, .badge, [data-is="badge"]
+    badge()
+
+[class*='box-arrow']
+    lift-2()
+
+.box-arrow-top, [data-is="box-arrow-top"]
+    box-arrow($arrow="top")
+
+.box-arrow-right, [data-is="box-arrow-right"]
+    box-arrow($arrow="right")
+
+.box-arrow-bottom, [data-is="box-arrow-bottom"]
+    box-arrow($arrow="bottom")
+
+.box-arrow-left, [data-is="box-arrow-left"]
+    box-arrow($arrow="left")
+
+button, .button, [data-is="button"], input[type="button"]
+    button()
+
+button-pin, .button-pin, [data-is="button-pin"]
+    button-pin()
+
+button-square, .button-square, [data-is="button-square"]
+    button-square()
+
+button-group, .button-group, [data-is="button-group"]
+    button-group()
+
+card, .card, [data-is="card"]
+    card()
+    lift-3()
+
+checkbox, [data-is="checkbox"]
+    checkbox()
+
+file, [data-is="file"]
+    file()
+
+hr
+    hr()
+
+icon, .icon, [data-is="icon"]
+    icon()
+
+input[type="range"]
+    slider()
+
+input
+    input-text()
+    &[type="text"], &[type="password"], &[type="email"]
+        input-text()
+
+input[type="number"]
+    &::-webkit-inner-spin-button
+        appearance: none
+    -moz-appearance: textfield;
+
+input-number
+    display: flex
+    input
+        border-right-radius(0)
+        min-width: 3em
+    button-group
+        width: 4em
+        button-square:first-of-type
+            border-left-radius(0)
+
+// menu-accordion
+ul[data-is="menu-accordion"]
+    menu-accordion()
+// end : menu-accordion
+
+path, ul.path, ul[data-is="path"]
+    path()
+
+// progress
+dot-pulse
+    dot-pulse()
+progress-bar
+    progress-bar()
+spinner
+    spinner()
+// end : progress
+
+radio, [data-is="radio"]
+    radio()
+
+radio-btn, [data-is="radio-btn"]
+    radio-btn()
+
+sidebar
+    sidebar()
+
+slide
+    slide()
+
+switch, [data-is="switch"]
+    switch()
+
+tab, [data-is="tab"]
+    tab()
+
+tag, .bits.tag, [data-is=tag]
+    tag()

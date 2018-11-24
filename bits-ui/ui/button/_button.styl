@@ -1,11 +1,13 @@
-button($bg-color=$button-color)
+button(
+        $bg-color=$color-p,
+        $radius=4px)
     ui-font()
     outline: none
     display: inline-flex
     align-items: center
     justify-content: center
     border: 0
-    border-radius: $border-radius
+    border-radius: $radius
     height: 2em
     font-size: 1em
     font-weight: bold
@@ -29,13 +31,13 @@ button($bg-color=$button-color)
     &[disabled]:hover
         bg-color(grayscale($bg-color))
 
-button-pin($bg-color=$button-color)
+button-pin($bg-color=$color-p)
     button($bg-color)
     border-radius: 50%
     width: 2em
     height: 2em
 
-button-square($bg-color=$button-color)
-    button($bg-color)
+button-square($bg-color=$color-p)
+    button($bg-color, 4px)
     width: 2em
     height: 2em

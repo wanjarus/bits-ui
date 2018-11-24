@@ -1,4 +1,5 @@
-switch, [data-is="switch"]
+switch(
+        $color-active=$color-p)
     ui-font()
     display: flex
     font-weight: bold
@@ -37,7 +38,7 @@ switch, [data-is="switch"]
     [ref="off"]
         color: black
     [ref="on"]
-        if darkshade($switch-color-active)
+        if darkshade($color-active)
             color: white
         else
             color: black
@@ -56,7 +57,7 @@ switch, [data-is="switch"]
         left: 0
 
     input[type="checkbox"]:checked ~ [ref="row"]
-        background-color: $switch-color-active
+        background-color: $color-active
 
     input[type="checkbox"]:checked ~ [ref="paddle"]
         transform: translate(101%, 0)

@@ -1,72 +1,7 @@
 @require '_color'
-@require '_color-scheme'
-@require '_default'
 @require '_media-query'
 @require '_mixin'
+@require '_ui'
 @require 'ui-class'
 @require 'typography'
-
-@require '../ui/badge/_badge'
-@require '../ui/box-arrow/_box-arrow'
-@require '../ui/button/_button'
-@require '../ui/button-group/_button-group'
-@require '../ui/card/_card'
-@require '../ui/checkbox/_checkbox'
-@require '../ui/file/file'
-@require '../ui/hr/hr'
-@require '../ui/icon/icon'
-@require '../ui/input/input'
-@require '../ui/menu-accordion/menu-accordion'
-@require '../ui/path/path'
-@require '../ui/progress/progress-bar'
-@require '../ui/progress/dot-pulse'
-@require '../ui/progress/spinner'
-@require '../ui/radio/radio'
-@require '../ui/radio-btn/radio-btn'
-@require '../ui/sidebar/sidebar'
-@require '../ui/slide/slide'
-@require '../ui/switch/switch'
-@require '../ui/tab/tab'
-@require '../ui/tag/tag'
-@require '../ui/toggle/toggle-btn'
-
-badge, .badge, [data-is="badge"]
-    badge()
-
-
-[class*='box-arrow']
-    lift-2()
-
-.box-arrow-top, [data-is="box-arrow-top"]
-    box-arrow($arrow="top")
-
-.box-arrow-right, [data-is="box-arrow-right"]
-    box-arrow($arrow="right")
-
-.box-arrow-bottom, [data-is="box-arrow-bottom"]
-    box-arrow($arrow="bottom")
-
-.box-arrow-left, [data-is="box-arrow-left"]
-    box-arrow($arrow="left")
-
-button, .button, [data-is="button"], input[type="button"]
-    button()
-
-button-pin, .button-pin, [data-is="button-pin"]
-    button-pin()
-
-button-square, .button-square, [data-is="button-square"]
-    button-square()
-
-button-group, .button-group, [data-is="button-group"]
-    button-group()
-
-card, .card, [data-is="card"]
-    card()
-    lift-2()
-
-checkbox, [data-is="checkbox"]
-    checkbox()
-
-progress-bar
-    progress-bar()
+@require 'default'

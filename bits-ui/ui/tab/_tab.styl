@@ -1,4 +1,6 @@
-radio-btn, [data-is="radio-btn"]
+tab(
+        $button-color=lighten(grey, 70%),
+        $highlight-color=$color-p)
     display: inline-block
     position: relative
     font-size: 1em
@@ -14,12 +16,13 @@ radio-btn, [data-is="radio-btn"]
         height: 100%
 
     button
-        button($bg-color=lighten(grey, 70%))
+        button($button-color)
+        border-bottom: 0.1em solid rgba(255,255,255,0)
 
     /* On mouse-over, add a background color */
     &:hover input[type="radio"] ~ button
-        bg-color($radio-btn-color-hover)
+        border-bottom: 0.15em solid $highlight-color
 
     /* When the radio button is checked, add background color */
     input[type="radio"]:checked ~ button
-        bg-color($radio-btn-color-active)
+        border-bottom: 0.15em solid $highlight-color

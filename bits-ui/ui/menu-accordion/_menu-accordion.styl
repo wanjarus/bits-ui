@@ -1,7 +1,9 @@
-ul[data-is="menu-accordion"]
+menu-accordion(
+        $border-color=$color-p,
+        $bg-color=$color-c)
     padding: 0
     margin: 0
-    border: 1px solid $color-p
+    border: 1px solid $border-color
     border-radius: 0.2em
 
     i.caret
@@ -9,7 +11,7 @@ ul[data-is="menu-accordion"]
         float: right
         border-left: 0.25em solid transparent
         border-right: 0.25em solid transparent
-        border-bottom: 0.25em solid $color-p
+        border-bottom: 0.25em solid $border-color
         margin-bottom: 0.25em
         transform: rotateZ(90deg)
         will-change: transform
@@ -32,7 +34,7 @@ ul[data-is="menu-accordion"]
             margin-top: 0.55em
             margin-right: 0.2em
     a:active
-        bg-color($color-c)
+        bg-color($bg-color)
     a ~ ul
         height: 0
     a.on
