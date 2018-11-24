@@ -1,0 +1,41 @@
+button($bg-color=$button-color)
+    ui-font()
+    outline: none
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    border: 0
+    border-radius: $border-radius
+    height: 2em
+    font-size: 1em
+    font-weight: bold
+    cursor: pointer
+    bg-color($bg-color)
+    transition: 0.2s
+    box-shadow: 0px 1px 2px 0px darken(white, 70%)
+    box-sizing: border-box
+    -webkit-tap-highlight-color: rgba(0,0,0,0)
+
+    &:hover
+        background-color: tint($bg-color, 20%)
+        box-shadow: 0px 2px 2px 0px darken(white, 70%)
+
+    &:active
+        background-color: darken($bg-color, 20%)
+        box-shadow: 0px 0px 2px 0px darken(white, 70%)
+
+    &[disabled]
+        bg-color(grayscale($bg-color))
+    &[disabled]:hover
+        bg-color(grayscale($bg-color))
+
+button-pin($bg-color=$button-color)
+    button($bg-color)
+    border-radius: 50%
+    width: 2em
+    height: 2em
+
+button-square($bg-color=$button-color)
+    button($bg-color)
+    width: 2em
+    height: 2em

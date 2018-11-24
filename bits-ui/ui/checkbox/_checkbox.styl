@@ -1,10 +1,11 @@
-checkbox, [data-is="checkbox"]
-    $width = 1.1em
-    $height = 1.1em
+checkbox(
+        $bg-color=lighten(grey, 50%),
+        $active-color=$color-p)
+    $size = 1.1em
     ui-font()
     position: relative
-    width: $width
-    height: $height
+    width: $size
+    height: $size
     user-select: none
     display: inline-block
 
@@ -12,8 +13,8 @@ checkbox, [data-is="checkbox"]
     input
         opacity: 0
         cursor: pointer
-        width: $width
-        height: $height
+        width: $size
+        height: $size
         position: absolute
         z-index: 1
 
@@ -22,19 +23,19 @@ checkbox, [data-is="checkbox"]
         position: absolute
         top: 0
         left: 0
-        width: $width
-        height: $height
-        background-color: lighten(grey, 50%)
+        width: $size
+        height: $size
+        background-color: $bg-color
         box-shadow: 0 1px 1px 0 grey
 
     /* On mouse-over, add a grey background color */
     &:hover input ~ span
-        background-color: $checkbox-color-hover
+        background-color: lighten($active-color, 20%)
 
 
     /* When the checkbox is checked, add background color */
     input:checked ~ span
-        background-color: $checkbox-color-active
+        background-color: $active-color
 
     /* Create the checkmark/indicator (hidden when not checked) */
     span:after
