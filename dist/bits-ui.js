@@ -7,7 +7,7 @@ riot.tag2('checkbox', '<yield></yield> <span></span>', '', '', function(opts) {
 riot.tag2('file', '<yield></yield>', '', '', function(opts) {
     var self = this;
     self.on('mount', function(){
-        self.root.querySelector('button').addEventListener('click',
+        self.root.querySelector('[data-id="button"]').addEventListener('click',
             function(){
                 self.root.querySelector('input[type="file"]').click();
             }
@@ -142,6 +142,14 @@ riot.tag2('menu-accordion', '<yield></yield>', '', '', function(opts) {
 riot.tag2('dot-pulse', '<div data-id="p1"></div> <div data-id="p2"></div> <div data-id="p3"></div>', '', '', function(opts) {
 });
 
+riot.tag2('progress-bar', '<div class="indeterminate"></div>', '', '', function(opts) {
+});
+
+
+
+riot.tag2('spinner', '<svg viewbox="25 25 50 50"> <circle cx="50" cy="50" r="20" stroke-miterlimit="10"></circle> </svg>', '', '', function(opts) {
+});
+
 riot.tag2('radio', '<yield></yield> <span></span>', '', '', function(opts) {
 });
 
@@ -247,47 +255,6 @@ riot.tag2('switch', '<yield></yield> <div ref="row"> <span ref="on">{opts.on}</s
         self.opts = opts;
         self.update();
     });
-});
-
-riot.tag2('toggle-btn', '<yield></yield>', '', '', function(opts) {
-    var self = this;
-    if (!self.opts['bg-color']) self.opts['bg-color'] = 'bg-p';
-    if (!self.opts['toggle-color']) self.opts['toggle-color'] = 'bg-c';
-    self.on('mount', function(){
-        self.checkbox = self.root.querySelector('input');
-        self.button = self.root.querySelector('button');
-        self.button.classList.add(self.opts['bg-color']);
-        self.checkbox.onclick = self.on_click;
-    });
-
-    this.on_click = function(event) {
-        if (self.checkbox.checked === true) {
-            self.button.classList.add(self.opts['toggle-color']);
-        } else {
-            self.button.classList.remove(self.opts['toggle-color']);
-        }
-    }.bind(this)
-});
-
-riot.tag2('toggle-pin', '<yield></yield>', '', '', function(opts) {
-    var self = this;
-    if (!self.opts['bg-color']) self.opts['bg-color'] = 'bg-p';
-    if (!self.opts['toggle-color']) self.opts['toggle-color'] = 'bg-c';
-
-    self.on('mount', function(){
-        self.checkbox = self.root.querySelector('input');
-        self.button = self.root.querySelector('button-pin');
-        self.button.classList.add(self.opts['bg-color']);
-        self.checkbox.onclick = self.on_click;
-    });
-
-    this.on_click = function(event) {
-        if (self.checkbox.checked === true) {
-            self.button.classList.add(self.opts['toggle-color']);
-        } else {
-            self.button.classList.remove(self.opts['toggle-color']);
-        }
-    }.bind(this)
 });
 
 //# sourceMappingURL=bits-ui.js.map
