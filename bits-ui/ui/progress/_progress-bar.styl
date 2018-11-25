@@ -3,19 +3,20 @@ progress-bar($color=$color-p)
 	height: 0.25rem
 	display: block
 	width: 100%
-	background-color: lighten($color, 75%)
+	background-color: darken(white, 15%)
 	border-radius: 10rem
 	background-clip: padding-box
 	margin: 0.5rem 0 1rem 0
 	overflow: hidden
-	.determinate
+	.indicate
+		background-color: $color
 		position: absolute
 		background-color: inherit
+		border-radius: 10rem
 		top: 0
 		bottom: 0
-		background-color: $color
 		transition: width .3s linear
-	.indeterminate
+	.loop
 		background-color: $color
 		&:before
 			content: ''
